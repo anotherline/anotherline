@@ -1,0 +1,96 @@
+mixin pubOutput
+  -var auth="author",ed="editor",bt='books',ct='chapters',jt='journals',wtype='web',ct='coursework'
+
+  if cv.publications.books
+    h3.inner-span books
+    #books-pub-child
+      ul.striped
+        each book in cv.publications.books
+          -if (book.forthcoming === false) {
+            li 
+              if book.editors
+                -var editors = authorBuilder(book.editors,bt,ed)
+                | #{editors}
+                -if (book.editors.length == 0) {
+                  | , (Ed). 
+                -}
+                -else {
+                  | , (Eds). 
+                -}
+              if book.authors
+                -var author = authorBuilder(book.authors,auth)
+                | #{author}
+              if book.date
+                | (#{book.date}). 
+                cite #{book.title}. 
+                | #{book.pressLoc.city}, #{book.pressLoc.state}: #{book.press}.
+          -}
+
+  if cv.publications.chapters
+    h3.inner-span chapters
+    #chapters-pub-child
+      ul.striped
+        each chapter in cv.publications.chapters
+          -if (chapter.forthcoming === false) {
+            li 
+              if chapter.authors
+                -var author = authorBuilder(chapter.authors,auth)
+                | #{author}
+
+              if chapter.date
+                | (#{chapter.date}). #{chapter.title}. 
+
+              if chapter.editors
+                | In 
+                -var editor = authorBuilder(chapter.editors,ed)
+                | #{editor}
+                
+              if chapter.collection
+                cite #{chapter.collection}, 
+                em (pp. #{chapter.pgNums})
+                | . #{chapter.pressLoc.city}, #{chapter.pressLoc.state}: #{chapter.press}.
+          -}
+
+  if cv.publications.journals
+    h3.inner-span articles
+    #journals-pub-child
+      ul.striped
+        each article in cv.publications.journals
+          li 
+            if article.authors
+              -var auth="author"
+              -var author = authorBuilder(article.authors,auth)
+              | #{author}
+            if article.date
+              | (#{article.date}). #{article.title}. 
+              cite #{article.journal}, #{article.volume}, 
+              | pp. #{article.pgNums}.
+
+  if cv.publications.web
+    h3.inner-span web-based
+    #web-pub-child
+      ul.striped
+        each wt in cv.publications.web
+          li 
+            if wt.authors
+              -var auth="author"
+              -var author = authorBuilder(wt.authors,auth)
+              | #{author}
+            if wt.date
+              | (#{wt.date}). #{wt.title}. 
+              cite #{wt.journal}, #{wt.volume}. 
+              | Available at 
+              a(href=wt.assets.permaLink) #{wt.assets.permaLink}.
+
+  -if (cv.publications.books.forthcoming !== false || cv.publications.chapters.forthcoming !== false || cv.publications.journals.forthcoming !== false || cv.publications.web.forthcoming !== false) {
+
+    h3.inner-span forthcoming
+    #forthcoming-pub-child
+      ul.striped
+        each forth in cv.publications
+          -for (var y=0; y<forth.length; y++) {
+              -if (forth[y].forthcoming !== false){
+                li #{forth[y].title}
+              -}
+          -}
+  -}

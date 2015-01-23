@@ -1,0 +1,50 @@
+extends index-layout
+
+block content
+  .bgImg
+    .blur
+  header
+    .header-content
+      h1.header-h1= pageHeader.title
+      p #{pageHeader.strapline}
+      a(title="AnotherLine", href="") Learn more
+
+  .info-block.goldenrod
+    .container
+      .row
+        figure.col-md-7.col-sm-6.img-block
+          img.index-feature-image(src="http://placehold.it/350x350", alt="Feature 1")
+
+        .col-md-5.col-sm-6
+          h3 Who is AnotherLine For?
+          p
+            | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
+            | euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad 
+            | minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut 
+            | aliquip ex ea commodo consequat.
+          p
+            | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
+            | euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad 
+            | minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut 
+            | aliquip ex ea commodo consequat.
+
+          a(data-toggle="modal", href="#signup", class="btn btn-block btn-lg btn-trans") Sign up
+
+  .info-block.cabbage
+    .container
+      .row
+        figure.col-md-7.col-sm-6.img-block
+          img.index-feature-image(src="http://placehold.it/350x350", alt="Feature 2")
+
+        .col-md-5.col-sm-6
+          h3 Feature 2
+          p
+            | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
+            | euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad 
+            | minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut 
+            | aliquip ex ea commodo consequat.
+          p
+            | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
+            | euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad 
+            | minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut 
+            | aliquip ex ea commodo consequat.

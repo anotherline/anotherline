@@ -1,0 +1,92 @@
+-for (var a = 0; a <= chapter.authors.length-1; a++) {
+
+  -var newSize = nameCounter(chapter.authors)
+  
+  case newSize
+    when 0
+      -var authObjLength = nameObjCounter(chapter.authors[a])
+      -var name = nameBuilder(chapter.authors[a],authObjLength)
+
+      case authObjLength
+        when 2
+          | #{name[0]}, #{name[1]}. 
+        when 3
+          | #{name[0]}, #{name[1]}. #{name[2]}. 
+        when 4
+          | #{name[0]}, #{name[1]}. #{name[2]}, #{name[3]}. 
+
+    when 1
+      -var authObjLength = nameObjCounter(chapter.authors[a])
+      -var name = nameBuilder(chapter.authors[a],authObjLength)
+
+      case authObjLength
+        when 2
+          -if (a == chapter.authors.length-1) {
+            | &amp; #{name[1]}. #{name[0]}. 
+          -}
+          -else {
+            | #{name[0]}, #{name[1]}., 
+          -}
+        when 3
+          -if (typeof chapter.authors[a].mi !== 'undefined') {
+            -if (a == chapter.authors.length-1) {
+              | &amp; #{name[1]}. #{name[2]}. #{name[0]}. 
+            -}
+            -else {
+              | #{name[0]}, #{name[1]}. #{name[2]}. 
+            -}
+          -}
+          -else {
+            -if (a == chapter.authors.length-1) {
+              | &amp; #{name[1]}. #{name[0]}, #{name[2]}. 
+            -}
+            -else {
+              | #{name[0]}, #{name[1]}, #{name[2]}. 
+            -}
+          -}
+        when 4
+          -if (a == chapter.authors.length-1) {
+            | &amp; #{name[1]}. #{name[2]}. #{name[0]}, #{name[3]}. 
+          -}
+          -else {
+            | #{name[0]}, #{name[1]}. #{name[2]}, #{name[3]}. 
+          -}
+
+  -if (newSize >= 2) {
+    -var authObjLength = nameObjCounter(chapter.authors[a])
+    -var name = nameBuilder(chapter.authors[a],authObjLength)
+
+    case authObjLength
+      when 2
+        -if (a == chapter.authors.length-1) {
+          | &amp; #{name[1]}. #{name[0]}. 
+        -}
+        -else {
+          | #{name[0]}, #{name[1]}., 
+        -}
+      when 3
+        -if (typeof chapter.authors[a].mi !== 'undefined') {
+          -if (a == chapter.authors.length-1) {
+            | &amp; #{name[1]}. #{name[2]}. #{name[0]}. 
+          -}
+          -else {
+            | #{name[0]}, #{name[1]}. #{name[2]}. 
+          -}
+        -}
+        -else {
+          -if (a == chapter.authors.length-1) {
+            | &amp; #{name[1]}. #{name[0]}, #{name[2]}. 
+          -}
+          -else {
+            | #{name[0]}, #{name[1]}, #{name[2]}. 
+          -}
+        -}
+      when 4
+        -if (a == chapter.authors.length-1) {
+          | &amp; #{name[1]}. #{name[2]}. #{name[0]}, #{name[3]}. 
+        -}
+        -else {
+          | #{name[0]}, #{name[1]}. #{name[2]}, #{name[3]}. 
+        -}
+  -}
+-}

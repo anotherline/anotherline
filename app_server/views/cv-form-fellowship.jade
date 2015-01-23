@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  .row.page-header
+    .col-lg-12
+      h1 Add a new line - Fellowship
+
+  .row
+    .col-xs-12.col-md-6
+      form.form-horizontal(action="/mycv", method="get", role="form")
+
+        .form-group
+          label.col-sm-2.control-label(for="fellowship") Fellowship:
+          .col-sm-10
+            input#fellowship.form-control(type="text", name="fellowship")
+
+        .form-group
+          label.col-sm-2.control-label(for="public-host") Sponsor:
+          .col-sm-10
+            input#role.form-control(type="text", name="role")
+
+        .form-group
+          label.col-sm-2.control-label(for="year") Year:
+          .col-sm-10
+            input#year.form-control(type="text", name="year", placeholder='2009')
+
+        .form-group
+          label.col-sm-2.control-label(for="tags") Tags:
+          .col-sm-10
+            input#tags.form-control(type="text", name="tags")
+
+        button.btn.btn-default.pull-right Add my line
+      .col-xs-12.col-md-4

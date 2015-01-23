@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  .row.page-header
+    .col-lg-12
+      h1 Add a new line - Presentation
+
+  .row
+    .col-xs-12.col-md-6
+      form.form-horizontal(action="/mycv", method="get", role="form")
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="type") Presentation Type:
+          .col-md-10.col-md-4
+            select.form-control.input-sm(name="type")
+              option conference
+              option workshop
+              option department
+              option public
+      .col-xs-12.col-md-4

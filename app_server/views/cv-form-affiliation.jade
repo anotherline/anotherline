@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  .row.page-header
+    .col-lg-12
+      h1 Add a new line - Affiliation
+
+  .row
+    .col-xs-12.col-md-6
+      form.form-horizontal(action="/mycv", method="get", role="form")
+
+        .form-group
+          label.col-sm-2.control-label(for="organization") Organization:
+          .col-sm-10
+            input#organization.form-control(type="text", name="organization")
+
+        .form-group
+          label.col-sm-2.control-label(for="start-year") Year began:
+          .col-sm-10
+            input#start-year.form-control(type="text", name="start-year", placeholder='2009')
+
+        .form-group
+          label.col-sm-2.control-label(for="end-year") Year ended:
+          .col-sm-10
+            input#end-year.form-control(type="text", name="end-year", placeholder='present')
+
+        .form-group
+          label.col-sm-2.control-label(for="tags") Tags:
+          .col-sm-10
+            input#tags.form-control(type="text", name="tags")
+
+        button.btn.btn-default.pull-right Add my line
+      .col-xs-12.col-md-4

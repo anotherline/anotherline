@@ -1,0 +1,35 @@
+extends dropdown-template-layout-test
+include _includes/educationLogic
+include _includes/appointmentLogic
+include _includes/publicationLogic
+
+block content
+  #banner.page-header
+    .row
+      .col-lg-6
+        h1
+
+  .row
+    .col-xs-12.col-sm-3
+      img(src="http://www.clindgrencv.com/assets/img/blog-header-200.jpg").profile
+      h4
+        a(href="") #{cv.general.fname} #{cv.general.lname}
+      p.address #{cv.general.location.address1}
+      p.address #{cv.general.location.city}, #{cv.general.location.state} #{cv.general.location.postalCode}
+      p.email #{cv.general.email}
+    
+    .col-xs-12.col-sm-9
+      #my-edu-cred
+        h2.word.education Education
+        #my-edu-cred-child1
+          +educationOutput
+
+      #my-appts-cred
+        h2.word.appointments Appointments
+        #my-appts-cred-child1
+          +apptOutput
+
+      #my-pubs-cred
+        h2.word.publications Publications
+        #my-pub-cred-child1
+          +pubOutput

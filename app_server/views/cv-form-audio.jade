@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  .row.page-header
+    .col-lg-12
+      h1 Add a new line - Audio
+
+  .row
+    .col-xs-12.col-md-6
+      form.form-horizontal(action="/mycv", method="get", role="form")
+        .form-group
+          label.col-sm-2.control-label(for="audio") 
+            span.glyphicon.glyphicon-plus-sign 
+            | &nbsp;Audio platform:
+          .col-sm-10
+            input#audio.form-control(type="text", name="audio")
+
+        button.btn.btn-default.pull-right Add my line
+      .col-xs-12.col-md-4

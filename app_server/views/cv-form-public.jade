@@ -1,0 +1,62 @@
+extends layout
+
+block content
+  .row.page-header
+    .col-lg-12
+      h1 Add a new line - Public Presentation
+
+  .row
+    .col-xs-12.col-md-6
+      form.form-horizontal(action="/mycv", method="get", role="form")
+        .form-group
+          label.col-sm-2.control-label(for="author") 
+            span.glyphicon.glyphicon-plus-sign 
+            | &nbsp;Author:
+          .col-sm-10
+            input#author.form-control(type="text", name="author")
+
+        .form-group
+          label.col-sm-2.control-label(for="title") Title:
+          .col-sm-10
+            input#title.form-control(type="text", name="title")
+
+        .form-group
+          label.col-sm-2.control-label(for="public-host") Host:
+          .col-sm-10
+            input#public-host.form-control(type="text", name="public-host")
+
+        .form-group
+          label.col-sm-2.control-label(for="location") Location:
+          .col-sm-10
+            input#location.form-control(type="text", name="location")
+
+        .form-group
+          label.col-sm-2.control-label(for="year") Year:
+          .col-sm-10
+            input#year.form-control(type="number", name="start-year", placeholder='2012')
+
+        .form-group
+          label.col-sm-2.control-label(for="hyperlink") Hyperlink:
+          .col-sm-10
+            input#hyperlink.form-control(type="text", name="hyperlink")
+
+        .form-group
+          label.col-sm-2.control-label(for="abstract") Abstract:
+          .col-sm-10
+            textarea#abstract.form-control(type="number", name="abstract", rows="5")
+
+        .form-group
+          label.col-sm-2.control-label(for="invited") Invited:
+          .col-sm-10
+            input#invited.input-group-addon(type="radio", name="invited", value="1", checked=invited=="yes") 
+            | &nbsp;Yes&nbsp; 
+            input#invited.input-group-addon(type="radio", name="invited", value="0", checked=invited=="no") 
+            | &nbsp;&nbsp;No
+
+        .form-group
+          label.col-sm-2.control-label(for="tags") Tags:
+          .col-sm-10
+            input#tags.form-control(type="text", name="tags")
+
+        button.btn.btn-default.pull-right Add my line
+      .col-xs-12.col-md-4

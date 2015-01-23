@@ -1,0 +1,32 @@
+mixin apptOutput
+  each u in cv.appointments.university
+    -if (u.current === true) {
+      h3.striped.parent-list #{u.name}
+      -if (u.courses !== 'undefined') {
+        h4 Teaching
+        ul.striped
+          each c in u.courses
+            li #{c.semesters}: #{c.position}; #{c.course}
+      -}
+      -if (u.research !== 'undefined') {
+        h4 Research
+        ul.striped
+          each r in u.research
+            li #{r.semesters}: #{r.position} in #{r.department}; #{r.project}
+      -}
+    -}
+    -else {
+      h3.striped.parent-list #{u.name}
+      -if (u.courses !== 'undefined') {
+        h4 Teaching
+        ul.striped
+          each c in u.courses
+            li #{c.semesters}: #{c.position}; #{c.course}
+      -}
+      -if (u.research !== 'undefined') {
+        h4 Research
+        ul.striped
+          each r in u.research
+            li #{r.semesters}: #{r.position} in #{r.department}; #{r.project}
+      -}
+    -}

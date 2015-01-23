@@ -1,0 +1,111 @@
+mixin pubOutput
+  if cv.publications.book
+    each book in cv.publications.book
+      h3.inner-span books
+      #books-pub-child
+        ul.striped
+          li 
+            if book.authors
+              -for (var a = 0; a < book.authors.length-1; a++) {
+                -if (a == book.authors.length-1) {
+                  | &amp; #{book.authors[a].given[0]}. #{book.authors[a].family}. 
+                -}
+                -else {
+                  | #{book.authors[a].family}, #{book.authors[a].given[0]}., 
+                -}
+              -}
+            if book.date
+              | (#{book.date}). 
+
+  if cv.publications.chapters
+    each chapter in cv.publications.chapters
+      h3.inner-span chapters
+      #chapters-pub-child
+        ul.striped
+          li 
+            if chapter.authors
+              script.
+                function authorBuilder(authorHolla) {
+                  var key, size, a1, count = 0;
+                  for (key in chapter.authors) {
+                    if (chapter.authors.hasOwnProperty(key)) {
+                      size = count++
+                    }
+                    if (size === 0) {
+                      console.log('test');
+                      for (var a = 0; a <= chapter.authors.length-1; a++) {
+                        a1 = chapter.authors[a].family + ', ' + chapter.authors[a].given[0] + '. ';
+                        console.log(a1);
+                      }
+                    }
+                  }
+                  return a1;
+                }
+              -for (var a = 0; a <= chapter.authors.length-1; a++) {
+                -var key
+                -var size
+                -var count = 0
+                -for (key in chapter.authors) {
+                  -if (chapter.authors.hasOwnProperty(key)) {
+                    -size = count++
+                  -}
+                -}
+                -if (size === 0){ // #{chapter.authors[a].family}, #{chapter.authors[a].given[0]}. 
+                  authorBuilder(authorHolla)
+                -}
+                -else if (size == 1){
+                  -if (a == chapter.authors.length-1) {
+                    | &amp; #{chapter.authors[a].given[0]}. #{chapter.authors[a].family}. 
+                  -}
+                  -else {
+                    | #{chapter.authors[a].family}, #{chapter.authors[a].given[0]}. 
+                  -}
+                -}
+                -else if (size >= 2) {
+                  -if (a == chapter.authors.length-1) {
+                    | &amp; #{chapter.authors[a].given[0]}. #{chapter.authors[a].family}. 
+                  -}
+                  -else {
+                    | #{chapter.authors[a].family}, #{chapter.authors[a].given[0]}., 
+                  -}
+                -}
+              -}
+            if chapter.date
+              | (#{chapter.date}). 
+            if chapter.title
+              | #{chapter.title}. 
+            if chapter.editors
+              | In 
+              -for (var a = 0; a <= chapter.editors.length-1; a++) {
+                -var key
+                -var size
+                -var count = 0
+                -for (key in chapter.editors) {
+                  -if (chapter.editors.hasOwnProperty(key)) {
+                    -size = count++
+                  -}
+                -}
+                -if (size === 0){
+                  | #{chapter.editors[a].given[0]}. #{chapter.editors[a].family} (Ed.), 
+                -}
+                -else if (size == 1){
+                  -if (a == chapter.editors.length-1) {
+                    | &amp; #{chapter.editors[a].given[0]}. #{chapter.editors[a].family} (Eds.), 
+                  -}
+                  -else {
+                    | #{chapter.editors[a].given[0]}. #{chapter.editors[a].family}.
+                  -}
+                -}
+                -else if (size >= 2) {
+                  -if (a == chapter.editors.length-1) {
+                    | &amp; #{chapter.editors[a].given[0]}. #{chapter.editors[a].family} (Eds.), 
+                  -}
+                  -else {
+                    | #{chapter.editors[a].given[0]}. #{chapter.editors[a].family}, 
+                  -}
+                -}
+              -}
+              if chapter.collection
+                cite #{chapter.collection}. 
+              if chapter.press
+                | #{chapter.pressLoc.city}, #{chapter.pressLoc.state}: #{chapter.press}.

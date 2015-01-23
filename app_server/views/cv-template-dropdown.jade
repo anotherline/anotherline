@@ -1,0 +1,229 @@
+extends dropdown-template-layout
+
+block content
+  #banner.page-header
+    .row
+      .col-lg-6
+        h1
+
+  .row
+    .col-xs-12.col-sm-3
+      img(src="http://www.clindgrencv.com/assets/img/blog-header-200.jpg").profile
+      h4
+        a(href="") Chris Lindgren
+      p.address Nolte Center
+      p.address Minneapolis, MN 56082
+      p.email lindg250@umn.edu
+    
+    .col-xs-12.col-sm-9
+      #my-edu-cred
+        h2.word.education Education
+        #my-edu-cred-child1
+          h3.striped.parent-list RSTC
+          ul#ed-phd-info.striped
+            li 
+              a(href='/') UMN
+            li Advisor: 
+              a(href='/') Haas
+
+          h3.striped.parent-list MA in Composition Studies
+          ul#ed-phd-info.striped
+            li 
+              a(href='/') North Dakota State University, 2012
+            li Thesis: "Where’s the Revolution? From 'Code Year' to the Continuum of Proceduracy"
+              ul.indent-margin-fix
+                li Advisor: 
+                  a(href='/') Kevin Brooks
+                li Member: 
+                  a(href='/') Andrew Mara
+                li Member: 
+                  a(href='/') Kelly R. Sassi
+                li Outside Member: 
+                  a(href='/') Brian Slator
+
+          h3.striped.parent-list BA in English Studies
+          ul#ed-phd-info.striped
+            li 
+              a(href='/') North Dakota State University, 2004
+            li Advisor:
+              a(href='/') Kevin Brooks
+
+      #my-appts-cred
+        h2.word.appointments Appointments
+        #my-appts-cred-child1
+          h3.striped.parent-list University of Minnesota
+          ul.striped.indent
+            li Fall 2014: Graduate Instructor, Rhetoric, Technology, and the Internet (WRIT 3577)
+            li Spring 2013-Summer 2013: Research Assistant, Computer Science & Engineering
+            li Fall 2012, Fall 2013: Graduate Instructor, 
+              a(href='http://www.clindgrencv.com/umn-1301.html') First-Year Writing (WRIT 1301)
+
+          h3.striped.parent-list North Dakota State University
+          ul.striped.indent
+            li Summer 2011-Spring 2012: Research Assistant, Sugar Labs @ NDSU
+            li Spring 2011: Research Assistant, National Writing Project
+            li Fall 2009-Spring 2012: Graduate Instructor, 
+              a(href='http://www.clindgrencv.com/ndsu-120.html') First-Year Writing
+            li Fall 2003-Spring 2004: Content Developer, 
+              a(href='http://fishhook.cs.ndsu.nodak.edu/home/') Like-A-Fishhook / Virtual Archaeologist Game Project
+
+      #my-pubs-cred
+        h2.word.publications Publications
+        #my-pubs-cred-child1.inner-child
+          h3.inner-span chapters
+          #chapters-pub-child
+            ul.striped
+              li Brooks, Kevin, Chris Lindgren, and Matthew Warner. (2014). Tackling a fundamental problem: Using digital labs to build a smarter computing culture. In Bill Hart-Davidson and Jim Ridolfo, (Eds.). <em>Rhetoric and the Digital Humanities</em>. Chicago, IL: University of Chicago Press.
+
+        #my-pubs-cred-child2.inner-child
+          h3.inner-span publications in progress
+          #in-process-pubs-child
+            ul.striped
+              li Brooks, Kevin and Chris Lindgren. Responding to the proceduracy crisis: From 'Code Year' to Code Decade. In Lynn C. Lewis, (Ed.). <em>The Kids Still Can't Write: Literacy Crisis Discourses in the 21st Century</em>. [Manuscript accepted; Computers and Composition Digital Press, Winter 2015].
+              li Hawk, Byron, Chris Lindgren, and Andrew Mara. Utopian Laptop Initiatives: From technological deism to object-oriented rhetoric. In Sidney Dobrin, (Ed.). <em>Writing Posthumanism, Posthuman Writing</em>. [Manuscript accepted; Parlor Press, Winter 2015].
+
+        #my-pubs-cred-child3.inner-child
+          h3.inner-span book reviews
+          #reviews-pub-child
+            ul.striped
+              li Lindgren, Chris. (2013). BASIC coding cultures. [Review of the book <em>10 PRINT CHR$(205.5+RND(1)); : GOTO 10</em>, by N. Montfort, P. Baudoin, J. Bell, I. Bogost, J. Douglass, M. C. Marino, M. Mateas, C. Raes, M. Sample, & N. Vawter]. <em>Enculturation, 16</em>. Go to 
+                a(href='http://enculturation.gmu.edu/10-print') http://enculturation.gmu.edu/10-print.
+
+      #my-pres-cred
+        h2.word.presentations Presentations
+        #my-pres-cred-child1.inner-child
+          h3.inner-span conferences
+          #pres-cred-child1
+            ul.striped
+              li
+                | (Sep. 2014). 
+                a(href='https://docs.google.com/presentation/d/1ichOzca0O5WjdG8QrnXbUoxs-syMhKbfc2rJnwq5VWo/pub?start=false&amp;loop=false&amp;delayms=20000#slide=id.p') The dynamic materialities of programming practices. 
+                | Association for Computing Machinery: Special Interest Group on the Communication of Design. Colorado Springs, CO. <em>//invited</em>
+              li
+                | (May 2014). 
+                a(href="http://algorithmsrideology.clindgrencv.com") Swapping gender and negotiating differences through data structures. 
+                | Rhetoric Society of America. Austin, TX.
+              li 
+                | (March 2014). Critical code studies roundtable. Digital Arts, Sciences, and Humanities. University of Minnesota: Digital Library Services. //invited
+              li Haas, Christina &amp; Chris Lindgren. (February 2014). Panel co-respondent. The material turn in Writing Studies. Writing Across Borders III. Paris, France.
+              li (October 2013). The rhetorical influence of Google's ecosystem of APIs on web developer practices. Western States Rhetoric &amp; Literacies. Salt Lake City, UT.
+              li (March 2013). Building a smarter computing culture with proceduracy. NCTE CCCC. Las Vegas, NV.
+              li
+                | (December 2012). 
+                a(href="http://glitchhhhhhh.clindgrencv.com/") De-boxing pandora: Tinkering with glitch art methodologies. 
+                | GLI.TC/H. Chicago, IL.
+              li 
+                | (November 2012). 
+                a(href="http://sugartechnopolitics.clindgrencv.com/") The technoSocial politics of the Sugar OS: Experiencing technical difficulties.
+                | Great Plains Alliance for Computers and Writing. Mankato, MN.
+              li (September 2011). GUI power: Composition’s (soft)wares and ways toward the visual, and away from Code. Languages &amp; Cultures Circle of Manitoba &amp; North Dakota. North Dakota State University.
+              li Brooks, Kevin and Chris Lindgren. (May 2011). Participating in OLPC: Visions for Computers and Writing. Computers and Writing. University of Michigan.
+              li Lindgren, Chris, Abigail Bakke, Sreerupa Sengupta, and Karen Sorenson. (October 2010). Second Life and Writing in the Design Professions. Great Plains Alliance for Computers and Writing. North Dakota State University.
+              li (February 2009). Storytelling in the global village: A glimpse into our Web 2.0 selves. Red River Graduate Student Conference. North Dakota State University.
+              li (March 2004). Teens and 40s chatting: A generational-linguistic study. Great Plains Alliance for Computers and Writing. North Dakota State University.
+        
+        #my-pres-cred-child2.inner-child
+          h3.inner-span workshops / groups
+          #pres-cred-child2
+            ul.striped
+              li (Feb-Mar 2014). 'Genderswapping' or 'misgendering'? A question of 'Jailbreaking the Patriarchy'. Critical Code Studies Working Group (discussion thread leader). The Humanities and Critical Code Studies Lab, University of Southern California.
+              li (Feb-Mar 2012). Critical Code Studies Working Group (participant). The Humanities and Critical Code Studies Lab, University of Southern California.
+              li Lindgren, Chris and Rebecca Hayes. (October 2011). Seeing and constructing visual arguments in online spaces. Innovation in the Composition Classroom: Ways to Incorporate Digital Tools. North Dakota State University.
+              li (Fall 2011). The GeoProfile Project: Stories cutting across maps. English Department Teachers Orientation Workshop. North Dakota State University. <em>//invited</em>
+              li (Fall 2010). Online writing spaces with Weebly.com. English Department Technologies Workshop, North Dakota State University. <em>//invited</em>
+
+        #my-pres-cred-child3.inner-child
+          h3.inner-span department
+          #pres-cred-child3
+            ul.striped
+              li (Oct. 2014). The social nature of programming practices: Expanding the notion of the 'technical'. Department of Writing Studies: Research Parlor.
+              li (Feb. 2014). Extending writing, writing Web Browser extensions. Department of Writing Studies: Visit Day Research Showcase.
+
+      #my-serve-cred
+        h2.word.service Service
+        #my-serve-cred-child1.inner-child
+          h3.inner-span journal / editorial
+          #journal-service-child
+            ul.striped
+              li Reviewer, International Journal of SocioTechnology and Knowledge Development.
+              li Reviewer, Written Communication.
+              li Associate Editor. Itineration: Cross-Disciplinary Studies in Rhetoric, Media, & Culture. Fall 2012-present.
+              li Web Developer. Itineration: Cross-Disciplinary Studies in Rhetoric, Media, & Culture. Spring 2013.
+
+        #my-serve-cred-child2.inner-child
+          h3.inner-span workshops / groups</h2>
+          #workshop-service-child
+            ul.striped
+              li (Feb-Mar 2014). 'Genderswapping' or 'misgendering'? A question of 'Jailbreaking the Patriarchy'. Critical Code Studies Working Group (discussion thread leader). The Humanities and Critical Code Studies Lab, University of Southern California.
+              li (Feb-Mar 2012). Critical Code Studies Working Group (participant). The Humanities and Critical Code Studies Lab, University of Southern California.
+              li Lindgren, Chris and Rebecca Hayes. (October 2011). Seeing and constructing visual arguments in online spaces. Innovation in the Composition Classroom: Ways to Incorporate Digital Tools. North Dakota State University.
+              li (Fall 2011). The GeoProfile Project: Stories cutting across maps. English Department Teachers Orientation Workshop. North Dakota State University. //invited
+              li (Fall 2010). Online writing spaces with Weebly.com. English Department Technologies Workshop, North Dakota State University. <em>//invited</em>
+
+        #my-serve-cred-child3.inner-child
+          h3.inner-span committees
+          #committee-service-child
+            ul.striped
+              li Convener. Code work: Exploring Digital Studies through code. Institute for Advanced Study: Research and Creative Collaborative, University of Minnesota. 2014–15. //invited
+              li Student Representative to the Director of Graduate Studies. Writing Studies Department, University of Minnesota. Spring 2013-May 2014 //nominated and voted as student body representative
+              li Host. Writing Studies Department: Visit Day, University of Minnesota. Spring 2013.
+              li Planning Committee. Improving the Graduate Program's Web Presence, University of Minnesota. Spring 2013. //invited
+              li Planning Committee. Great Plains Alliance for Computers and Writing, University of Minnesota. Spring 2013-Fall 2013.
+              li Representative MA Student. English Department External Advisory Board Meeting, North Dakota State University. Spring 2012. <em>//invited</em>
+              li Sugar-Team Lead. Sugar Labs @ NDSU, North Dakota State University. Fall 2011-Spring 2012.
+              li Organizer and Presenter. Software Freedom Day. North Dakota State University, English and Computer Science Departments. September 2011.
+              li Organizer, STEM/Red River Valley Writing Project, North Dakota State University, English Education. Fall 2010.
+              li Planning Committee, Red River Graduate Student Conference, North Dakota State University, English Department. Fall 2009-Spring 2010.
+
+      #my-grantsID-cred
+        h2.word.grants Grants
+        #my-grantsID-cred-child1.inner-child
+          ul#grant-info.striped
+            li Code work: Exploring Digital Studies through code. Institute for Advanced Study: Research and Creative Collaborative, University of Minnesota. 2014–15. [Funded: $10,000]
+            li Community Projects Award: NDSU Office of the President. Sugar on a Stick: Establishing a Smart Computing Culture in Fargo. Spring 2011. [Funded: $20,000]
+
+      #my-awarded-cred
+        h2.word.awards Awards / Fellowships
+        #my-awarded-cred-child1.inner-child
+          ul#award-info.striped
+            li 
+              a(href="http://clindgrencv.com/rsa14.html") 2014 RSA Social Media Fellowship
+            li Summer 2014 James I. Brown Research Fellowship. University of Minnesota: Writing Studies.
+            li Spring 2014 Medtronic/Industrial Affiliates Program Fellowship. University of Minnesota: Writing Studies and Medtronic.
+            li Spring 2013 James I. Brown Fellowship. University of Minnesota: Writing Studies.
+
+      #my-affil-cred
+        h2.word.affiliations Affiliations
+        #my-affil-cred-child1.inner-child
+          ul#affiliation-info.striped
+            li Rhetoric Society of America
+            li NCTE
+            li Association of Teachers of Technical Writing
+            li HASTAC Scholar
+
+      #my-langue-cred
+        h2.word.languages Languages
+        #my-langue-cred-child1
+          h3.striped.parent-list Human
+          ul#human-language-info.striped
+            li Mandarin (2 years of coursework)
+
+          h3.striped.parent-list Human/Machine
+          ul#machine-language-info.striped
+            li HTML5/CSS3 (Advanced)
+            li Javascript/jQuery (Intermediate)
+            li Node.js (Novice)
+            li Python (Intermediate)
+            li PHP (Novice)
+            li Java (Novice)
+
+      #my-prof-cred
+        h2.word.proficiencies Technological Proficiencies
+        #my-prof-cred-child1
+          ul#proficiency-info.striped
+            li <b>Audio</b>: Ableton live, Adobe Audition, Audacity, MLRV
+            li <b>Video</b>: Novacut, Kdenlive, iMovie, Modul8
+            li <b>Graphic/Image</b>: Adobe InDesign, Photoshop, Fireworks; Kira, Inkscape
+            li <b>Office Suites</b>: Microsoft, LibreOffice
+            li <b>Course Management</b>: Blackboard, Moodle, also Wordpress as a LMS
+            li <b>Version Control</b>: Github, FTP

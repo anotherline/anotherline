@@ -1,0 +1,62 @@
+extends layout
+
+block content
+  .row.page-header
+    .col-lg-12
+      h1 Add a new line - Education
+
+  .row
+    .col-xs-12.col-md-6
+      form.form-horizontal(action="/mycv", method="get", role="form")
+        .form-group
+          label.col-sm-2.control-label(for="institution") University:
+          .col-sm-10
+            input#institution.form-control(type="text", name="institution", placeholder='University of Haha')
+
+        .form-group
+          label.col-sm-2.control-label(for="degree") Degree:
+          .col-sm-10
+            input#degree.form-control(type="text", name="degree", placeholder='PhD')
+
+        .form-group
+          label.col-sm-2.control-label(for="program") Program:
+          .col-sm-10
+            input#program.form-control(type="text", name="program", placeholder='Rhetoric and Scientific and Technical Communication')
+
+        .form-group
+          label.col-sm-2.control-label(for="start-year") Starting Year:
+          .col-sm-10
+            input#start-year.form-control(type="number", name="start-year", placeholder='2012')
+
+        .form-group
+          label.col-sm-2.control-label(for="end-year") Ending Year:
+          .col-sm-10
+            input#end-year.form-control(type="number", name="end-year", placeholder='2015')
+
+        .form-group
+          label.col-sm-2.control-label(for="thesisTitle") Thesis title:
+          .col-sm-10
+            input#thesisTitle.form-control(type="text", name="thesisTitle", placeholder="Better make it good!")
+
+        .form-group
+          label.col-sm-2.control-label(for="advisor") Advisor:
+          .col-sm-10
+            input#advisor.form-control(type="text", name="advisor")
+
+        .form-group
+          label.col-sm-2.control-label(for="member1") Committee member 1:
+          .col-sm-10
+            input#member1.form-control(type="text", name="member1")
+
+        .form-group
+          label.col-sm-2.control-label(for="member2") Committee member 2:
+          .col-sm-10
+            input#member2.form-control(type="text", name="member2")
+
+        .form-group
+          label.col-sm-2.control-label(for="outside") Outside member:
+          .col-sm-10
+            input#outside.form-control(type="text", name="outside")
+
+        button.btn.btn-default.pull-right Add my line
+      .col-xs-12.col-md-4
