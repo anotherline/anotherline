@@ -2,11 +2,11 @@
 
 ## About
 
-Yep, need to write this section.
+This application, called AnotherLine, will offer scholars a way to easily add and update their CV/portfolio information, which can either be hosted in the app, or their data may also be served as API endpoints for scholars to use in conjunction with their own HTML/CSS/JS templates.
 
 ## File Structure
 
-Yep, need to write this section.
+Yep, need to make/write this section.
 
 ## How to run and test on your machine
 
@@ -23,6 +23,7 @@ Yep, need to write this section.
 - app_server/_includes/appointmentLogic.jade: appointment semesters need a cleaner output, e.g., instead of Fall 2011, Spring 2011, Summer 2013, I want it to be Fall 2011-Spring 2011, Summer 2013
 - app_server/_includes/publicationLogic.jade: needs conditional statements to account for other data parameters, such as available hyperlinks to works, or dropdown/pop-up feature if abstract for a work is available, etc.
 - app_server/_includes/publicationLogic.jade: make sure all hyperlinks are Web accessible
+- create more jade templates for the CVs; currently, there are two: <code>cv-template-dropdown.jade</code> and <code>cv-template-traditional.jade</code>.
 
 ## Contributors
 
