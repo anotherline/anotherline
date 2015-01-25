@@ -1,5 +1,7 @@
 # AnotherLine: Your academic story
 
+![Screenshot of AnotherLine homepage](http://www.clindgrencv.com/assets/img/outside/anotherline-readme.png "Screenshot of AnotherLine homepage")
+
 ## About
 
 This application, called AnotherLine, will offer scholars a way to easily add and update their CV/portfolio information, which can either be hosted in the app, or their data may also be served as API endpoints for scholars to use in conjunction with their own HTML/CSS/JS templates.
