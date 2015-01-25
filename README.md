@@ -28,7 +28,7 @@ Yep, need to make/write this section.
 
 ## Other ways to contribute
 
-- create a new cv template in jade; see the [anotherline JSON schema](https://github.com/anotherline/anotherline-schema) for key/value pairs.
+- Create a new cv template in jade; see the [anotherline JSON schema](https://github.com/anotherline/anotherline-schema) for key/value pairs. For current examples, see <code>app_server/views/cv-template-dropdown-new.jade</code> and <code>app_server/views/cv-template-traditional.jade</code>.
 
 ## Contributors
 
