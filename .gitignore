@@ -1,1 +1,7 @@
 node_modules
+app_server/views/_includes/publicationLogic-1.jade
+app_server/views/add-education
+app_server/views/add-grant
+app_server/views/add-presentation
+app_server/views/add-publication
+app_server/views/dropdown-template-layout-test.jade

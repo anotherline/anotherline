@@ -269,7 +269,7 @@ module.exports.cvTest1 = function(req, res){
             state:'UT'
           },
           date: '2015',
-          pgNums: '',
+          pgNums: '30-55',
           abstract: '',
           assets:
           {

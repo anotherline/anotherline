@@ -230,7 +230,7 @@ app.locals.authorBuilder = function(nameData,nameCheck) {
           var writeName = name[1]+'. '+name[0]+' (Ed.), ';
         }
         else if (authObjLength == 3) {
-          var writeName = name[1]+', '+name[2]+'. '+name[0]+' (Ed.), ';
+          var writeName = name[1]+'. '+name[2]+'. '+name[0]+' (Ed.), ';
         }
         else if (authObjLength == 4) {
           var writeName = name[1]+'. '+name[2]+'. '+name[0]+', '+name[3]+' (Ed.), ';
