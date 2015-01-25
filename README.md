@@ -26,6 +26,10 @@ Yep, need to make/write this section.
 - <code>app_server/_includes/publicationLogic.jade</code>: make sure all hyperlinks are Web accessible
 - create more jade templates for the CVs; currently, there are two: <code>cv-template-dropdown.jade</code> and <code>cv-template-traditional.jade</code>.
 
+## Other ways to contribute
+
+- create a new cv template in jade; see the [anotherline JSON schema](https://github.com/anotherline/anotherline-schema) for key/value pairs.
+
 ## Contributors
 
 * Chris Lindgren, [Writing Studies scholar](http://clindgrencv.com/) 
