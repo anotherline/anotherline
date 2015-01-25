@@ -1,4 +1,4 @@
-extends dropdown-template-layout-test
+extends dropdown-template-layout
 include _includes/educationLogic
 include _includes/appointmentLogic
 include _includes/publicationLogic
@@ -11,7 +11,7 @@ block content
 
   .row
     .col-xs-12.col-sm-3
-      img(src="http://www.clindgrencv.com/assets/img/blog-header-200.jpg").profile
+      img(src="#{cv.general.picture}").profile
       h4
         a(href="") #{cv.general.fname} #{cv.general.lname}
       p.address #{cv.general.location.address1}
@@ -31,5 +31,4 @@ block content
 
       #my-pubs-cred
         h2.word.publications Publications
-        #my-pub-cred-child1
-          +pubOutput
+        +pubOutput

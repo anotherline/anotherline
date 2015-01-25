@@ -32,7 +32,7 @@ module.exports.addAppt = function(req, res){
 /* GET 'dropdown template cv' page */
 module.exports.cvTest1 = function(req, res){
   res.render('cv-template-dropdown-new', { 
-    title: 'My CV TEST',
+    title: 'Dropdown Template Test',
     cv: {
       general: {
         given:'Chris',
@@ -434,7 +434,7 @@ module.exports.cvDropDown = function(req, res){
         mi: "A.",
         title: "PhD Student",
         university: "University of Minnesota",
-        picture: '',
+        picture: 'http://www.clindgrencv.com/assets/img/blog-header-200.jpg',
         email: "lindg250@umn.edu",
         phone: '',
         website: '',
@@ -483,15 +483,16 @@ module.exports.cvDropDown = function(req, res){
       }],
       publications: [{
         book: [{
-          title: '',
-          authors: [
-            ''
-          ],
+          title: 'Understanding computer programming as an embodied writing practice',
+          authors: [{
+            given: "Chris",
+            family: "Lindgren"
+          }],
           editors: [
             ''
           ],
-          press: '',
-          date: '',
+          press: 'MIT Press',
+          date: '2020',
           abstract: '',
           assets:
           {
