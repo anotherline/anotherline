@@ -41,6 +41,8 @@ With the completion of semi-stable schema for the CV/Portfolio, we can now compl
 ## Other ways to contribute
 
 - Create a new cv template in jade; see the [anotherline JSON schema](https://github.com/anotherline/anotherline-schema) for key/value pairs. For current examples, see <code>app_server/views/cv-template-dropdown-new.jade</code> and <code>app_server/views/cv-template-traditional.jade</code>.
+- Open a new issue: [https://github.com/anotherline/anotherline/issues](https://github.com/anotherline/anotherline/issues)
+- Contact me with questions: chris.a.lindgren [at] gmail [dot] com.
 
 ## Contributors
 
