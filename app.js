@@ -7,6 +7,9 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var authorBuilder = require('./public/lib/authorBuilder');
+var lineBuilder = require('./public/lib/lineBuilder');
+var alphabetizer = require('./public/lib/alphabetizer');
+var prettyDate = require('./public/lib/prettyDate');
 
 var app = express();
 require('./app_server/models/db');
@@ -25,89 +28,10 @@ app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.locals.indexScripts = ['/javascripts/lib/jquery.min.js','/bootstrap/js/bootstrap.min.js','/javascripts/header-blur.js'];
-
 app.locals.authorBuilder = authorBuilder;
-
-app.locals.lineBuilder = function(cvline,lineType,titleType) {
-  var line = '';
-
-  if (lineType == 'books' ) {
-    if (titleType == 'editor') {
-      var edName = authorBuilder(cvline.editors);
-      if (cvline.editors.length == 0) {
-        line += edName
-              +', (Ed). '
-              +'('+cvline.date+'). '
-              +cvline.title+'. '
-              +cvline.pressLoc.city
-              +', '
-              +cvline.pressLoc.state
-              +': '
-              +cvline.press
-              +'.';
-      }
-      else {
-        line += edName
-              +', (Eds). '
-              +'('+cvline.date+'). '
-              +cvline.title+'. '
-              +cvline.pressLoc.city
-              +', '
-              +cvline.pressLoc.state
-              +': '
-              +cvline.press
-              +'.';
-      }
-    }
-    else if (titleType == 'author') {
-      var aName = authorBuilder(cvline.authors);
-      if (cvline.editors.length == 0) {
-        line += aName
-              +'. '
-              +'('+cvline.date+'). '
-              +cvline.title+'. '
-              +cvline.pressLoc.city
-              +', '
-              +cvline.pressLoc.state
-              +': '
-              +cvline.press
-              +'.';
-      }
-      return line;
-    }
-    else if (lineType == 'chapters' ) {
-
-    }
-    else if (lineType == 'journals' ) {
-
-    }
-    else if (lineType == 'web' ) {
-
-    }
-    else if (lineType == 'coursework' ) {
-
-    }
-  }
-}
-
-app.locals.alphabetizer = function(namesToSort) {
-  // namesToSort is an array of objects/names to compare
-  var compareNames = function(a, b) {
-    // compare two name objects.
-    return a.name.localeCompare(b.name);
-  };
-  namesToSort.sort(compareNames); // names sorted alphabetically
-  return namesToSort;
-}
-
-app.locals.prettyDate = function(dateString){
-  var date = new Date(dateString);
-  var d = date.getDate();
-  var monthNames = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
-  var m = monthNames[date.getMonth()];
-  var y = date.getFullYear();
-  return d+' '+m;
-}
+app.locals.lineBuilder = lineBuilder;
+app.locals.alphabetizer = alphabetizer;
+app.locals.prettyDate = prettyDate;
 
 // development only
 if ('development' == app.get('env')) {
