@@ -20,13 +20,23 @@ Yep, need to make/write this section.
 
 ## To-Dos
 
-- build API and move server logic, accordingly
+### Phase 1 - Develop database schema and templates, responsively.
+
+The main goal of this first phase is to develop the schema and a few CV templates in tandem, as to revise either as necessary.
+
 - <code>app_server/_includes/appointmentLogic.jade</code>: simplify appointments output by sorting it out by academic semesters, most recent to last item.
 - <code>app_server/_includes/appointmentLogic.jade</code>: appointment semesters need a cleaner output, e.g., instead of Fall 2011, Spring 2011, Summer 2013, I want it to be Fall 2011-Spring 2011, Summer 2013
 - <code>app_server/_includes/publicationLogic.jade</code>: the forthcoming conditional needs to be completed for all pub types.
 - <code>app_server/_includes/publicationLogic.jade</code>: needs conditional statements to account for other data parameters, such as available hyperlinks to works, or dropdown/pop-up feature if abstract for a work is available, etc.
 - <code>app_server/_includes/publicationLogic.jade</code>: make sure all hyperlinks are Web accessible
 - create more jade templates for the CVs; currently, there are two: <code>cv-template-dropdown.jade</code> and <code>cv-template-traditional.jade</code>.
+
+### Phase 2 - Build MongoDB database and API
+
+With the completion of semi-stable schema for the CV/Portfolio, we can now complete the MongoDB/Mongoose database schema, developing the cv-form templates to input data.
+
+- build API and move server logic, accordingly
+- write the form templates for data input
 
 ## Other ways to contribute
 
