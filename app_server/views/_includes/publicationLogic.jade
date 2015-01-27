@@ -94,20 +94,21 @@ mixin pubOutput
           each forth in cv.publications
             -for (var y=0; y<forth.length; y++) {
                 -if (forth[y].forthcoming !== false){
-                  li 
-                    if forth[y].authors
-                      -var author = authorBuilder(forth[y].authors,auth)
-                      | #{author}
-                    if forth[y].date
-                      | (#{forth[y].date}). #{forth[y].title}
-                    if forth[y].editors
-                      | . In 
-                      -var editor = authorBuilder(forth[y].editors,ed)
-                      | #{editor}
-                    if forth[y].collection
-                      cite #{forth[y].collection}, 
-                      em (pp. #{forth[y].pgNums})
-                      | . #{forth[y].pressLoc.city}, #{forth[y].pressLoc.state}: #{forth[y].press}.
+                  if cv.publications.chapters
+                    li 
+                      if forth[y].authors
+                        -var author = authorBuilder(forth[y].authors,auth)
+                        | #{author}
+                      if forth[y].date
+                        | (#{forth[y].date}). #{forth[y].title}
+                      if forth[y].editors
+                        | . In 
+                        -var editor = authorBuilder(forth[y].editors,ed)
+                        | #{editor}
+                      if forth[y].collection
+                        cite #{forth[y].collection}, 
+                        em (pp. #{forth[y].pgNums})
+                        | . #{forth[y].pressLoc.city}, #{forth[y].pressLoc.state}: #{forth[y].press}.
                 -}
             -}
   -}
