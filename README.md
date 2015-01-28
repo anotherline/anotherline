@@ -44,8 +44,6 @@ This application, called AnotherLine, will offer scholars a way to easily add an
     	user.js
 </pre>
 
-Yep, need to make/write this section.
-
 ## How to run and test on your machine
 
 1. Install [Node.js and NPM](http://nodejs.org/)
