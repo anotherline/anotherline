@@ -9,22 +9,24 @@ mixin pubOutput
           each book in cv.publications.books
             -if (book.forthcoming === false) {
               li 
-                if book.editors
-                  -var editors = authorBuilder(book.editors,bt,ed)
-                  | #{editors}
-                  -if (book.editors.length == 0) {
-                    | , (Ed). 
+                -if (book.role !== true){
+                    -var editors = authorBuilder(book.editors,auth)
+                    | #{editors}
+                    -if (book.editors.number = 1) {
+                      | , (Ed). 
+                    -}
+                    -else if (book.editors.number > 1){
+                      | , (Eds). 
+                    -}
                   -}
-                  -else {
-                    | , (Eds). 
+                  -if (book.role !== false){
+                    -var author = authorBuilder(book.authors,auth)
+                    | #{author}
                   -}
-                if book.authors
-                  -var author = authorBuilder(book.authors,auth)
-                  | #{author}
-                if book.date
-                  | (#{book.date}). 
-                  cite #{book.title}. 
-                  | #{book.pressLoc.city}, #{book.pressLoc.state}: #{book.press}.
+                  if book.date
+                    | (#{book.date}). 
+                    cite #{book.title}. 
+                    | #{book.pressLoc.city}, #{book.pressLoc.state}: #{book.press}.
             -}
 
   if cv.publications.chapters
@@ -118,37 +120,37 @@ mixin pubOutput
           -}
           // Forthcoming chapters
           -var chps = cv.publications.chapters
-          -for (var y=0; y<chps.length; y++) {
-              -if (chps[y].forthcoming !== false){
+          -for (var c=0; c<chps.length; c++) {
+              -if (chps[c].forthcoming !== false){
                 li 
-                  if chps[y].authors
-                    -var author = authorBuilder(chps[y].authors,auth)
+                  if chps[c].authors
+                    -var author = authorBuilder(chps[c].authors,auth)
                     | #{author}
-                  if chps[y].date
-                    | (#{chps[y].date}). #{chps[y].title}
-                  if chps[y].editors
+                  if chps[c].date
+                    | (#{chps[c].date}). #{chps[c].title}
+                  if chps[c].editors
                     | . In 
-                    -var editor = authorBuilder(chps[y].editors,ed)
+                    -var editor = authorBuilder(chps[c].editors,ed)
                     | #{editor}
-                  if chps[y].collection
-                    cite #{chps[y].collection}, 
-                    em (pp. #{chps[y].pgNums})
-                    | . #{chps[y].pressLoc.city}, #{chps[y].pressLoc.state}: #{chps[y].press}.
+                  if chps[c].collection
+                    cite #{chps[c].collection}, 
+                    em (pp. #{chps[c].pgNums})
+                    | . #{chps[c].pressLoc.city}, #{chps[c].pressLoc.state}: #{chps[c].press}.
               -}
           -}
           // Forthcoming articles
           -var arts = cv.publications.journals
-          -for (var y=0; y<arts.length; y++) {
-              -if (arts[y].forthcoming !== false){
+          -for (var a=0; a<arts.length; a++) {
+              -if (arts[a].forthcoming !== false){
                 li 
-                  if arts[y].authors
+                  if arts[a].authors
                     -var auth="author"
-                    -var author = authorBuilder(arts[y].authors,auth)
+                    -var author = authorBuilder(arts[a].authors,auth)
                     | #{author}
-                  if arts[y].date
-                    | (#{arts[y].date}). #{arts[y].title}. 
-                    cite #{arts[y].journal}, #{arts[y].volume}, 
-                    | pp. #{arts[y].pgNums}.
+                  if arts[a].date
+                    | (#{arts[a].date}). #{arts[a].title}. 
+                    cite #{arts[a].journal}, #{arts[a].volume}, 
+                    | pp. #{arts[a].pgNums}.
               -}
           -}
           // Forthcoming web articles
