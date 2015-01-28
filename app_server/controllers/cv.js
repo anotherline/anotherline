@@ -176,10 +176,16 @@ module.exports.cvTest1 = function(req, res){
         books: [{
           forthcoming: false,
           title: 'Understanding computer programming as an embodied writing practice',
+          role: true,
           authors: [{
             number: 1,
             given: 'Chris',
             family: 'Lindgren'
+          }],
+          editors: [{
+            number: null,
+            given: '',
+            family: ''
           }],
           press: 'MIT Press',
           pressLoc: {
@@ -187,6 +193,27 @@ module.exports.cvTest1 = function(req, res){
             state:'MA'
           },
           date: '2020'
+        },
+        {
+          forthcoming: true,
+          title: 'Building a technical discourse: Writing code in non-compilable spaces',
+          role: false,
+          authors: [{
+            number: null,
+            given: '',
+            family: ''
+          }],
+          editors: [{
+            number: 1,
+            given: 'ChrisEditor',
+            family: 'Lindgren'
+          }],
+          press: 'MIT Press',
+          pressLoc: {
+            city:'Cambridge',
+            state:'MA'
+          },
+          date: '2025'
         }],
         chapters: [
         {

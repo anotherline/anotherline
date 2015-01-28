@@ -91,24 +91,49 @@ mixin pubOutput
       h3.inner-span forthcoming
       #forthcoming-pub-child
         ul.striped
-          each forth in cv.publications
-            -for (var y=0; y<forth.length; y++) {
-                -if (forth[y].forthcoming !== false){
-                  if cv.publications.chapters
-                    li 
-                      if forth[y].authors
-                        -var author = authorBuilder(forth[y].authors,auth)
-                        | #{author}
-                      if forth[y].date
-                        | (#{forth[y].date}). #{forth[y].title}
-                      if forth[y].editors
-                        | . In 
-                        -var editor = authorBuilder(forth[y].editors,ed)
-                        | #{editor}
-                      if forth[y].collection
-                        cite #{forth[y].collection}, 
-                        em (pp. #{forth[y].pgNums})
-                        | . #{forth[y].pressLoc.city}, #{forth[y].pressLoc.state}: #{forth[y].press}.
-                -}
-            -}
+          // Forthcoming books
+          -var bks = cv.publications.books
+          -for (var y=0; y<bks.length; y++) {
+              -if (bks[y].forthcoming !== false){
+                li
+                  -if (bks[y].role !== true){
+                    -var editors = authorBuilder(bks[y].editors,auth)
+                    | #{editors}
+                    -if (bks[y].editors.number = 1) {
+                      | , (Ed). 
+                    -}
+                    -else if (bks[y].editors.number > 1){
+                      | , (Eds). 
+                    -}
+                  -}
+                  -if (bks[y].role !== false){
+                    -var author = authorBuilder(bks[y].authors,auth)
+                    | #{author}
+                  -}
+                  if bks[y].date
+                    | (#{bks[y].date}). 
+                    cite #{bks[y].title}. 
+                    | #{bks[y].pressLoc.city}, #{bks[y].pressLoc.state}: #{bks[y].press}.
+              -}
+          -}
+          // Forthcoming chapters
+          -var chps = cv.publications.chapters
+          -for (var y=0; y<chps.length; y++) {
+              -if (chps[y].forthcoming !== false){
+                li 
+                  if chps[y].authors
+                    -var author = authorBuilder(chps[y].authors,auth)
+                    | #{author}
+                  if chps[y].date
+                    | (#{chps[y].date}). #{chps[y].title}
+                  if chps[y].editors
+                    | . In 
+                    -var editor = authorBuilder(chps[y].editors,ed)
+                    | #{editor}
+                  if chps[y].collection
+                    cite #{chps[y].collection}, 
+                    em (pp. #{chps[y].pgNums})
+                    | . #{chps[y].pressLoc.city}, #{chps[y].pressLoc.state}: #{chps[y].press}.
+              -}
+          -}
   -}
