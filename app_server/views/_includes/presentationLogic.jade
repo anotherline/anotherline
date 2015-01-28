@@ -57,3 +57,22 @@ mixin presOutput
       h3.inner-span department
       #dept-pres-child
         ul.striped
+          each d in cv.presentations.department
+            if d.authors
+              li
+                -var auth="author"
+                -var author = authorBuilder(d.authors,auth)
+                | #{author}
+                if d.date
+                  | (#{d.date}). 
+                  -if (d.assets.exists === true) {
+                    a(href=d.assets.presLink) #{d.title}. 
+                  -}
+                  -else if (d.assets.exists === false) {
+                    | #{d.title}. 
+                  -}
+                  cite #{d.event}. 
+                  | #{d.location.city}, #{d.location.state}. 
+                -if (d.invited === true) {
+                  em //invited
+                -}

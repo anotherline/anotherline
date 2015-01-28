@@ -1,0 +1,13 @@
+mixin serviceOutput
+  -var auth="author",ld="leader"
+
+  if cv.service.editorial
+    #my-pres-cred-child1
+      h3.inner-span journal/editorial
+      #conf-pres-child
+        ul.striped
+          each e in cv.service.editorial
+            if e.role
+              li
+                | #{e.role}, 
+                cite #{e.journal}.

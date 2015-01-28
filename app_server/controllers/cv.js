@@ -542,16 +542,19 @@ module.exports.cvTest1 = function(req, res){
           invited: false
         }],
         department: [{
-          date:"",
+          date:"Oct. 2014",
           authors: [
-            ""
-          ],
-          title: "",
-          event: "",
+          {
+            number: 1,
+            given: 'Chris',
+            family: 'Lindgren'
+          }],
+          title: "The social nature of programming practices: Expanding the notion of the \'technical\'",
+          event: "Department of Writing Studies: Research Parlor",
           location:
           {
-            city: "",
-            state: ""
+            city: "Minneapolis",
+            state: "MN"
           },
           assets:
           {
@@ -560,6 +563,23 @@ module.exports.cvTest1 = function(req, res){
             linkTxt: ""
           },
           invited: true
+        }]
+      },
+      service: {
+        editorial: [{
+          role: "Reviewer",
+          journal: "Written Communication"
+        }],
+        groups: [{
+          date:"",
+          title:"",
+          organization:""
+        }],
+        committees: [{
+          date:"",
+          title:"",
+          role:"",
+          organization:""
         }]
       }
     }
