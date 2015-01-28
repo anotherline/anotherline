@@ -8,7 +8,7 @@ This application, called AnotherLine, will offer scholars a way to easily add an
 
 ## File Structure
 
-<code>anotherline/
+<pre>anotherline/
     app.js
     package.json
     app_server/
@@ -42,7 +42,7 @@ This application, called AnotherLine, will offer scholars a way to easily add an
     	index.js
     	main.js
     	user.js
-</code>
+</pre>
 
 Yep, need to make/write this section.
 
