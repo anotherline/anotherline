@@ -314,5 +314,131 @@ module.exports = function authorBuilder(nameData,nameCheck) {
       return writeName;
     }
   }
+  else if (nameCheck == 'leader') {
+    for (var n = 0; n <= nameData.length-1; n++) {
+
+      var writeNameArray = [];
+      var returnOutput=[];
+      var newSize = nameCounter(nameData);
+
+      // 1 LEADER
+      if (newSize == 0) {
+
+        var authObjLength = nameObjCounter(nameData[n]);
+        var name = nameBuilder(nameData[n],authObjLength);
+
+        if (authObjLength ==2) {
+          var writeName = name[1]+'. '+name[0]+' (Organizer), ';
+        }
+        else if (authObjLength == 3) {
+          var writeName = name[1]+'. '+name[2]+'. '+name[0]+' (Organizer), ';
+        }
+        else if (authObjLength == 4) {
+          var writeName = name[1]+'. '+name[2]+'. '+name[0]+', '+name[3]+' (Organizer), ';
+        }
+      }
+      // 2 LEADERS
+      else if (newSize == 1) {
+
+        var authObjLength = nameObjCounter(nameData[n]);
+        var name = nameBuilder(nameData[n],authObjLength);
+
+        if (authObjLength == 2) {
+          if (n == nameData.length-1) {
+            writeName2 = '& '+name[1]+'. '+name[0]+' (Organizers), ';
+          }
+          else {
+            writeName1 = name[1]+'. '+name[0]+'. ';
+          }
+        }
+        else if (authObjLength == 3) {
+          if (typeof nameData[n].mi !== 'undefined') {
+            if (n == nameData.length-1) {
+              var writeName2 = '& '+name[1]+'. '+name[2]+'. '+name[0]+' (Organizers), ';
+            }
+            else {
+              var writeName1 = name[1]+'. '+name[2]+'. '+name[0]+'. ';
+            }
+          }
+          else {
+            if (n == nameData.length-1) {
+              var writeName = '& '+name[1]+'. '+name[0]+', '+name[2]+' (Organizers), ';
+              return writeName2;
+            }
+            else {
+              var writeName = name[1]+'. '+name[0]+', '+name[2]+' ';
+              return writeName1;
+            }
+          }
+        }
+        else if (authObjLength == 4) {
+          if (n == nameData.length-1) {
+            var writeName = '& '+name[1]+'. '+name[2]+'. '+name[0]+', '+name[3]+' (Organizers), ';
+            return writeName2;
+          }
+          else {
+            var writeName = name[1]+'. '+name[2]+'. '+name[0]+', '+name[3]+', ';
+            return writeName1;
+          }
+        }
+      }
+      // 3 OR MORE LEADERS
+      if (newSize > 1) {
+
+        var authObjLength = nameObjCounter(nameData[n]);
+        var name = nameBuilder(nameData[n],authObjLength);
+
+        if(authObjLength == 2) {
+          if (n == nameData.length-1) {
+            var writeName2 = '& '+name[1]+'. '+name[0]+' (Organizers), ';
+          }
+          else {
+            prepName[n] = name[1]+'. '+name[0]+', ';
+          }
+        }
+        else if(authObjLength == 3) {
+          if (typeof nameData[n].mi !== 'undefined') {
+            if (n == nameData.length-1) {
+              var writeName2 = '& '+name[1]+'. '+name[2]+'. '+name[0]+' (Organizers), ';
+            }
+            else {
+              prepName[n] = name[1]+'. '+name[2]+'. '+name[0]+', ';
+            }
+          }
+          else {
+            if (n == nameData.length-1) {
+              var writeName2 = '& '+name[1]+'. '+name[0]+', '+name[2]+' (Organizers), ';
+            }
+            else {
+              prepName[n] = name[1]+'. '+name[0]+', '+name[2]+', ';
+            }
+          }
+        }
+        else if(authObjLength == 4) {
+          if (n == nameData.length-1) {
+            var writeName2 = '& '+name[1]+'. '+name[2]+'. '+name[0]+', '+name[3]+' (Organizers), ';
+          }
+          else {
+            prepName[n] = name[1]+'. '+name[2]+'. '+name[0]+', '+name[3]+', ';
+          }
+        }
+      }
+    }
+    if (newSize > 1) {
+      prepName.push(writeName2);
+      var returnName = '';
+      for (var r=0; r<=prepName.length-1; r++) {
+        returnName += prepName[r];
+      }
+      return returnName;
+    }
+    else if (newSize == 1) {
+      returnOutput.push(writeName1,writeName2);
+      return returnOutput[0]+returnOutput[1];
+    }
+    else {
+      return writeName;
+    }
+  }
 
 }

@@ -1,18 +1,59 @@
 mixin presOutput
-  -var auth="author"
+  -var auth="author",ld="leader"
 
   if cv.presentations.conference
-    #my-pub-cred-child1
+    #my-pres-cred-child1
       h3.inner-span conference
-      #books-pub-child
+      #conf-pres-child
         ul.striped
           each p in cv.presentations.conference
             if p.authors
+              li
                 -var auth="author"
                 -var author = authorBuilder(p.authors,auth)
                 | #{author}
-              if p.date
-                | (#{p.date}). 
-                a(href=p.assets.presLink) #{p.title}. 
-                cite #{p.conference}. 
-                | #{p.location.city}, #{p.location.state}.
+                if p.date
+                  | (#{p.date}). 
+                  -if (p.assets.exists === true) {
+                    a(href=p.assets.presLink) #{p.title}. 
+                  -}
+                  -else if (p.assets.exists === false) {
+                    | #{p.title}. 
+                  -}
+                  cite #{p.conference}. 
+                  | #{p.location.city}, #{p.location.state}. 
+                -if (p.invited === true) {
+                  em //invited
+                -}
+
+  if cv.presentations.workshop
+    #my-pres-cred-child2
+      h3.inner-span workshops
+      #workshops-pres-child
+        ul.striped
+          each w in cv.presentations.workshop
+            if w.date
+              li
+                | (#{w.date}). 
+                if w.role
+                  em #{w.role} 
+                if w.leaders
+                  -var leader = authorBuilder(w.leaders,ld)
+                  | in #{leader}
+                -if (w.assets.exists === true) {
+                  a(href=w.assets.presLink) #{w.title}. 
+                -}
+                -else if (w.assets.exists === false) {
+                  | #{w.title}. 
+                -}
+                cite #{w.workshop}. 
+                | #{w.location.city}, #{w.location.state}. 
+                -if (w.invited === true) {
+                  em //invited
+                -}
+
+  if cv.presentations.department
+    #my-pres-cred-child3
+      h3.inner-span department
+      #dept-pres-child
+        ul.striped

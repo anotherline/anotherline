@@ -58,6 +58,7 @@ This application, called AnotherLine, will offer scholars a way to easily add an
 
 The main goal of this first phase is to develop the schema and a few CV templates in tandem, as to revise either as necessary.
 
+- update template mixins to check for available assets in publications and presentations objects
 - <code>app_server/_includes/appointmentLogic.jade</code>: simplify appointments output by sorting it out by academic semesters, most recent to last item.
 - <code>app_server/_includes/appointmentLogic.jade</code>: appointment semesters need a cleaner output, e.g., instead of Fall 2011, Spring 2011, Summer 2013, I want it to be Fall 2011-Spring 2011, Summer 2013
 - <code>app_server/_includes/publicationLogic.jade</code>: the forthcoming conditional needs to be completed for all pub types.

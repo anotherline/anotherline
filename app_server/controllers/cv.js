@@ -256,6 +256,7 @@ module.exports.cvTest1 = function(req, res){
           abstract: '',
           assets:
           {
+            exists: false,
             permaLink: '',
             isbn:'',
             linkTxt: '',
@@ -300,6 +301,7 @@ module.exports.cvTest1 = function(req, res){
           abstract: '',
           assets:
           {
+            exists: true,
             permaLink: 'http://www.notareallink.com',
             isbn:'',
             linkTxt: '',
@@ -348,6 +350,7 @@ module.exports.cvTest1 = function(req, res){
           abstract: '',
           assets:
           {
+            exists: false,
             permaLink: '',
             isbn:'',
             linkTxt: '',
@@ -378,6 +381,7 @@ module.exports.cvTest1 = function(req, res){
           abstract: '',
           assets:
           {
+            exists: false,
             permaLink: '',
             doi:'',
             linkTxt: '',
@@ -412,6 +416,7 @@ module.exports.cvTest1 = function(req, res){
           abstract: '',
           assets:
           {
+            exists: true,
             permaLink: '',
             doi:'',
             linkTxt: '',
@@ -441,6 +446,7 @@ module.exports.cvTest1 = function(req, res){
           abstract: '',
           assets:
           {
+            exists: true,
             permaLink: 'http://www.kairos.edu/thislinkisnotreal',
             linkTxt: '',
             img: '',
@@ -467,6 +473,7 @@ module.exports.cvTest1 = function(req, res){
           abstract: 'Application Programming Interfaces (APIs) are not written for machines (Tulach 2008). Organizations and companies write APIs primarily for composite human audiences: web developers with a wide range of skill levels and purposes to engage with their data and services on the Web. APIs have become increasingly valuable resources for companies like Twitter, who thrive on the creativity and productivity of third-party developers to create new Web apps that utilize their dynamic sources of user-generated data. Using a Vygotskian theory and autoethnography methodological approach, I explore my ongoing situated code-writing practices and learning as interlaced with the encoded sociocultural histories wound up within the process of writing with the Twitter API.',
           assets:
           {
+            exists: true,
             permaLink: 'http://api.clindgrencv.com/',
             linkTxt: '',
             img: '',
@@ -494,12 +501,63 @@ module.exports.cvTest1 = function(req, res){
           location:
           {
             city:"Colorado Springs",
-            state:"CO"
+            state:"CO",
+            country: ""
           },
           assets:
           {
+            exists: true,
             presLink:"https://docs.google.com/presentation/d/1ichOzca0O5WjdG8QrnXbUoxs-syMhKbfc2rJnwq5VWo/pub?start=false&loop=false&delayms=20000#slide=id.p",
             linkTxt:"Link to slides and script."
+          },
+          invited: true
+        }],
+        workshop: [{
+          date: "2015",
+          leaders: [{
+            number: 1,
+            given: 'William',
+            family: 'Hart-Davidson'
+          },
+          {
+            number: 2,
+            given: 'Ryan',
+            family: 'Omizo'
+          }],
+          title: "Building \'Soph\'ware: Modeling theoretical approaches to technical and professional writing with computational methods",
+          workshop:"Rhetoric Society of America Summer Institute",
+          role: "Participant",
+          location:
+          {
+            city:"Madison",
+            state:"WI",
+            country: ""
+          },
+          assets:
+          {
+            exists: false,
+            presLink:"",
+            linkTxt:""
+          },
+          invited: false
+        }],
+        department: [{
+          date:"",
+          authors: [
+            ""
+          ],
+          title: "",
+          event: "",
+          location:
+          {
+            city: "",
+            state: ""
+          },
+          assets:
+          {
+            exists: false,
+            presLink: "",
+            linkTxt: ""
           },
           invited: true
         }]
