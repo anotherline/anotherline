@@ -8,6 +8,42 @@ This application, called AnotherLine, will offer scholars a way to easily add an
 
 ## File Structure
 
+<code>anotherline/
+    app.js
+    package.json
+    app_server/
+        controllers/
+        	cv.js
+        	lineMaker.js
+        	main.js
+        	templates.js
+        models/
+        	cv.js
+        	db.js
+        views/
+        	includes/
+        		[jade mixins] ...
+        	[jade templates] ...
+    node_modules/
+    	...
+    public/
+        bootstrap/
+        	...
+        images/
+            ...
+        javascripts/
+        	...
+       	lib/
+       		...
+       	stylesheets/
+       		...
+    routes/
+    	cv.js
+    	index.js
+    	main.js
+    	user.js
+</code>
+
 Yep, need to make/write this section.
 
 ## How to run and test on your machine
