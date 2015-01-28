@@ -390,6 +390,40 @@ module.exports.cvTest1 = function(req, res){
           tags: [
             ''
           ]
+        },
+        {
+          forthcoming: true,
+          title: 'Regulation and distributed ethos in U.S. online news coverage during the 2014 #Ferguson Protests',
+          authors: [
+          {
+            number: 1,
+            given: 'Chris',
+            family: 'Lindgren'
+          },
+          {
+            number: 2,
+            given: 'Laura',
+            family: 'Lindgren'
+          }],
+          journal: 'Journal of Business and Technical Communication',
+          volume: '57',
+          date: '2015',
+          pgNums: '45-92',
+          abstract: '',
+          assets:
+          {
+            permaLink: '',
+            doi:'',
+            linkTxt: '',
+            img: '',
+            altAttr: ''
+          },
+          field: [
+            ''
+          ],
+          tags: [
+            ''
+          ]
         }],
         web: [{
           forthcoming:false,
@@ -444,6 +478,30 @@ module.exports.cvTest1 = function(req, res){
           tags: [
             ''
           ]
+        }],
+      },
+      presentations: {
+        conference: [{
+          date:"Sep. 2014",
+          authors: [
+          {
+            number: 1,
+            given: 'Chris',
+            family: 'Lindgren'
+          }],
+          title:"The dynamic materialities of programming practices",
+          conference:"Association for Computing Machinery: Special Interest Group on the Communication of Design",
+          location:
+          {
+            city:"Colorado Springs",
+            state:"CO"
+          },
+          assets:
+          {
+            presLink:"https://docs.google.com/presentation/d/1ichOzca0O5WjdG8QrnXbUoxs-syMhKbfc2rJnwq5VWo/pub?start=false&loop=false&delayms=20000#slide=id.p",
+            linkTxt:"Link to slides and script."
+          },
+          invited: true
         }]
       }
     }

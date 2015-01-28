@@ -136,4 +136,35 @@ mixin pubOutput
                     | . #{chps[y].pressLoc.city}, #{chps[y].pressLoc.state}: #{chps[y].press}.
               -}
           -}
+          // Forthcoming articles
+          -var arts = cv.publications.journals
+          -for (var y=0; y<arts.length; y++) {
+              -if (arts[y].forthcoming !== false){
+                li 
+                  if arts[y].authors
+                    -var auth="author"
+                    -var author = authorBuilder(arts[y].authors,auth)
+                    | #{author}
+                  if arts[y].date
+                    | (#{arts[y].date}). #{arts[y].title}. 
+                    cite #{arts[y].journal}, #{arts[y].volume}, 
+                    | pp. #{arts[y].pgNums}.
+              -}
+          -}
+          // Forthcoming web articles
+          -var wa = cv.publications.web
+          -for (var w=0; w<wa.length; w++){
+            -if (wa[w].forthcoming !== false){
+              li
+                if wa[w].authors
+                  -var auth="author"
+                  -var author = authorBuilder(wa[w].authors,auth)
+                  | #{author}
+                if wa[w].date
+                  | (#{wa[w].date}). #{wa[w].title}. 
+                  cite #{wa[w].journal}, #{wa[w].volume}. 
+                  | Available at 
+                  a(href=wa[w].assets.permaLink) #{wa[w].assets.permaLink}.
+            -}
+          -}
   -}

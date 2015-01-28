@@ -1,0 +1,18 @@
+mixin presOutput
+  -var auth="author"
+
+  if cv.presentations.conference
+    #my-pub-cred-child1
+      h3.inner-span conference
+      #books-pub-child
+        ul.striped
+          each p in cv.presentations.conference
+            if p.authors
+                -var auth="author"
+                -var author = authorBuilder(p.authors,auth)
+                | #{author}
+              if p.date
+                | (#{p.date}). 
+                a(href=p.assets.presLink) #{p.title}. 
+                cite #{p.conference}. 
+                | #{p.location.city}, #{p.location.state}.

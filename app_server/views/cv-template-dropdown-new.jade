@@ -2,6 +2,7 @@ extends dropdown-template-layout
 include _includes/educationLogic
 include _includes/appointmentLogic
 include _includes/publicationLogic
+include _includes/presentationLogic
 
 block content
   #banner.page-header
@@ -32,3 +33,7 @@ block content
       #my-pubs-cred
         h2.word.publications Publications
         +pubOutput
+
+      #my-pres-cred
+        h2.word.presentations Presentations
+        +presOutput
