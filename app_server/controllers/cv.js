@@ -576,10 +576,12 @@ module.exports.cvTest1 = function(req, res){
           organization:""
         }],
         committees: [{
-          date:"",
-          title:"",
-          role:"",
-          organization:""
+          semesters: ['Fall 2014','Spring 2015'],
+          title:"Code work: Exploring Digital Studies through code",
+          role:"Convener",
+          organization:"Institute for Advanced Study: Research and Creative Collaborative",
+          university: "University of Minnesota",
+          invited: true
         }]
       }
     }

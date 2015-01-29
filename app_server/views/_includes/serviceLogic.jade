@@ -1,5 +1,4 @@
-mixin serviceOutput
-  -var auth="author",ld="leader"
+mixin serviceOutputs
 
   if cv.service.editorial
     #my-pres-cred-child1
@@ -11,3 +10,19 @@ mixin serviceOutput
               li
                 | #{e.role}, 
                 cite #{e.journal}.
+
+  if cv.service.committees
+    #my-pres-cred-child1
+      h3.inner-span committees
+      #conf-pres-child
+        ul.striped
+          each c in cv.service.committees
+            if c.role
+              li
+                | #{c.role}. (
+                | #{c.semesters}
+                | ). #{c.organization}. 
+                cite #{c.university}. 
+                -if (c.invited === true) {
+                  em //invited
+                -}
