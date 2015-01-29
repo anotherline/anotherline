@@ -1,0 +1,16 @@
+mixin grantsOutput
+
+  #my-grants-cred-child1.inner-child
+    ul#grants-info.striped
+      each g in cv.grants
+        if g.name
+          li
+            | #{g.name}. 
+            -if (g.sponsor.subordinate === true) {
+              em #{g.sponsor.subordinate}, 
+              | #{g.sponsor.principal}. 
+            -}
+            -else if (g.sponsor.subordinate === false) {
+              em #{g.sponsor.principal}. 
+            -}
+            | #{g.startDate} - #{g.startDate}. [Funded $#{g.amount}].

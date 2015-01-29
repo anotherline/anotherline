@@ -1,5 +1,5 @@
 mixin educationOutput
-  h1 #{cv.education.phd.thesisTitle}
+  h2 #{cv.education.phd.thesisTitle}
   -if (cv.education.phd.degCheck === true){
     h3.striped.parent-list #{cv.education.phd.degree} #{cv.education.phd.title} in #{cv.education.phd.program}
     ul#ed-phd-info.striped

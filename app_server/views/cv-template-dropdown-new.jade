@@ -4,6 +4,7 @@ include _includes/appointmentLogic
 include _includes/publicationLogic
 include _includes/presentationLogic
 include _includes/serviceLogic
+include _includes/grantsLogic
 
 block content
   #banner.page-header
@@ -21,24 +22,34 @@ block content
       p.email #{cv.general.email}
     
     .col-xs-12.col-sm-9
-      #my-edu-cred
-        h2.word.education Education
-        #my-edu-cred-child1
-          +educationOutput
+      if cv.education
+        #my-edu-cred
+          h2.word.education Education
+          #my-edu-cred-child1
+            +educationOutput
 
-      #my-appts-cred
-        h2.word.appointments Appointments
-        #my-appts-cred-child1
-          +apptOutput
+      if cv.appointments
+        #my-appts-cred
+          h2.word.appointments Appointments
+          #my-appts-cred-child1
+            +apptOutput
 
-      #my-pubs-cred
-        h2.word.publications Publications
-        +pubOutput
+      if cv.publications
+        #my-pubs-cred
+          h2.word.publications Publications
+          +pubOutput
 
-      #my-pres-cred
-        h2.word.presentations Presentations
-        +presOutput
+      if cv.presentations
+        #my-pres-cred
+          h2.word.presentations Presentations
+          +presOutput
 
-      #my-service-cred
-        h2.word.presentations Service
-        +serviceOutput
+      if cv.service
+        #my-service-cred
+          h2.word.service Service
+          +serviceOutput
+
+      if cv.grants
+        #my-grants-cred
+          h2.word.grants Grants
+          +grantsOutput

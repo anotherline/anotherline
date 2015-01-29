@@ -583,7 +583,18 @@ module.exports.cvTest1 = function(req, res){
           university: "University of Minnesota",
           invited: true
         }]
-      }
+      },
+      grants: [{
+        name: 'Code work: Exploring Digital Studies through code',
+        sponsor:{
+          subExists: true,
+          principal: 'University of Minnesota',
+          subordinate: 'Institute for Advanced Study: Research and Creative Collaborative'
+        },
+        startDate:'2014',
+        endDate:'2015',
+        amount:'10,000'
+      }]
     }
   });
 };
@@ -864,7 +875,7 @@ module.exports.cvDropDown = function(req, res){
           thesisTitle: ''
         }]
       },
-      service: [{
+      service: {
         editorial: [{
           role: '',
           journal:''
@@ -880,13 +891,17 @@ module.exports.cvDropDown = function(req, res){
           role:'',
           organization:''
         }]
-      }],
+      },
       grants: [{
-        name:'',
-        sponsor:'',
-        startDate:'',
-        endDate:'',
-        amount:''
+        name: 'Code work: Exploring Digital Studies through code',
+        sponsor:{
+          subExists: true,
+          principal: 'University of Minnesota',
+          subordinate: 'Institute for Advanced Study: Research and Creative Collaborative'
+        },
+        startDate:'2014',
+        endDate:'2015',
+        amount:'10,000'
       }],
       awards: [{
         fellowship: [{
