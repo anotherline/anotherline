@@ -62,7 +62,7 @@ module.exports.cvTest1 = function(req, res){
           program: 'Rhetoric of Science and Technical Communication',
           programURL: 'http://writingstudies.umn.edu/grad/phd/',
           startDate: '',
-          endDate: '',
+          endDate: '2017',
           expectedDate:'Spring 2017',
           thesisTitle: '',
           committee:
@@ -671,6 +671,18 @@ module.exports.cvTest1 = function(req, res){
             "Github", "FTP"
           ]
         }]
+      }],
+      languages: [{
+        language: "Mandarin",
+        fluency: "Two years of coursework"
+      },
+      {
+        language: "Javascript",
+        fluency: "Intermediate"
+      },
+      {
+        language: "Python",
+        fluency: "Intermediate"
       }]
     }
   });

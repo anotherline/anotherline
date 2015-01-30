@@ -1,0 +1,8 @@
+mixin languagesOutput
+
+  #my-languages-cred-child1.inner-child
+    ul#languages-info.striped
+      each l in cv.languages
+          li 
+            if l.language
+              | #{l.language} (#{l.fluency})

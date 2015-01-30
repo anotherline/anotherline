@@ -8,6 +8,7 @@ include _includes/grantsLogic
 include _includes/awardsLogic
 include _includes/affiliationsLogic
 include _includes/proficienciesLogic
+include _includes/languagesLogic
 
 block content
   #banner.page-header
@@ -28,8 +29,7 @@ block content
       if cv.education
         #my-edu-cred
           h2.word.education Education
-          #my-edu-cred-child1
-            +educationOutput
+          +educationOutput
 
       if cv.appointments
         #my-appts-cred
@@ -71,3 +71,8 @@ block content
         #my-proficiencies-cred
           h2.word.proficiencies Proficiencies
           +proficienciesOutput
+
+      if cv.languages
+        #my-languages-cred
+          h2.word.languages Languages
+          +languagesOutput
