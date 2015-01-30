@@ -183,7 +183,7 @@ module.exports.cvTest1 = function(req, res){
             family: 'Lindgren'
           }],
           editors: [{
-            number: null,
+            number: '',
             given: '',
             family: ''
           }],
@@ -199,7 +199,7 @@ module.exports.cvTest1 = function(req, res){
           title: 'Building a technical discourse: Writing code in non-compilable spaces',
           role: false,
           authors: [{
-            number: null,
+            number: '',
             given: '',
             family: ''
           }],
@@ -585,6 +585,27 @@ module.exports.cvTest1 = function(req, res){
         }]
       },
       grants: [{
+        grantees: [
+        {
+          number: 1,
+          given: "Justin",
+          family: "Schell"
+        },
+        {
+          number: 2,
+          given: "Chris",
+          family: "Lindgren"
+        },
+        {
+          number: 3,
+          given: "Alison",
+          family: "Link"
+        },
+        {
+          number: 4,
+          given: "Jeffrey",
+          family: "Kerzner"
+        }],
         name: 'Code work: Exploring Digital Studies through code',
         sponsor:{
           subExists: true,
@@ -594,7 +615,35 @@ module.exports.cvTest1 = function(req, res){
         startDate:'2014',
         endDate:'2015',
         amount:'10,000'
-      }]
+      }],
+      awards: {
+        fellowship: [{
+          name: "Social Media Fellowship",
+          sponsor:{
+            subExists: false,
+            principal:"Rhetoric Society of America",
+            subordinate:""
+          },
+          date:{
+            semExists: false,
+            year:"2014",
+            semester:""
+          }
+        }],
+        award: [{
+          name:"Teaching Excellence Award",
+          sponsor:{
+            subExists: false,
+            principal:"University of Minnesota",
+            subordinate:"Department of Writing Studies"
+          },
+          date:{
+            semExists: true,
+            year:"2014",
+            semester:"Fall"
+          }
+        }]
+      }
     }
   });
 };

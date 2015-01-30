@@ -9,24 +9,24 @@ mixin pubOutput
           each book in cv.publications.books
             -if (book.forthcoming === false) {
               li 
-                -if (book.role !== true){
-                    -var editors = authorBuilder(book.editors,auth)
-                    | #{editors}
-                    -if (book.editors.number = 1) {
-                      | , (Ed). 
-                    -}
-                    -else if (book.editors.number > 1){
-                      | , (Eds). 
-                    -}
+                -if (book.role === false){
+                  -var editors = authorBuilder(book.editors,auth)
+                  | #{editors}
+                  -if (book.editors.number = 1) {
+                    | , (Ed). 
                   -}
-                  -if (book.role !== false){
-                    -var author = authorBuilder(book.authors,auth)
-                    | #{author}
+                  -else if (book.editors.number > 1){
+                    | , (Eds). 
                   -}
-                  if book.date
-                    | (#{book.date}). 
-                    cite #{book.title}. 
-                    | #{book.pressLoc.city}, #{book.pressLoc.state}: #{book.press}.
+                -}
+                -if (book.role === true){
+                  -var author = authorBuilder(book.authors,auth)
+                  | #{author}
+                -}
+                if book.date
+                  | (#{book.date}). 
+                  cite #{book.title}. 
+                  | #{book.pressLoc.city}, #{book.pressLoc.state}: #{book.press}.
             -}
 
   if cv.publications.chapters

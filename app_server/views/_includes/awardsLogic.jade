@@ -1,0 +1,47 @@
+mixin awardsOutput
+
+  if cv.awards.fellowship
+    #my-awards-cred-child1.inner-child
+      h3.inner-span fellowships
+      #awards-fellowships-child
+        ul.striped
+          each f in cv.awards.fellowship
+            if f.name
+              li
+                -if (f.date.semExists === true) {
+                  | #{f.date.semester} #{f.date.year} 
+                -}
+                -else if (f.date.semExists === false) {
+                  | #{f.date.year} 
+                -} 
+                -if (f.sponsor.subExists === true) {
+                  em #{f.sponsor.subordinate}, 
+                  | #{f.sponsor.principal} 
+                -}
+                -else if (f.sponsor.subExists === false) {
+                  em #{f.sponsor.principal} 
+                -}
+                | #{f.name}.
+
+  if cv.awards.award
+    #my-awards-cred-child1.inner-child
+      h3.inner-span awards
+      #awards-award-child
+        ul.striped
+          each a in cv.awards.award
+            if a.name
+              li
+                -if (a.date.semExists === true) {
+                  | #{a.date.semester} #{a.date.year} 
+                -}
+                -else if (a.date.semExists === false) {
+                  | #{a.date.year} 
+                -}
+                | #{a.name}. 
+                -if (a.sponsor.subExists === true) {
+                  em #{a.sponsor.subordinate}, 
+                  | #{a.sponsor.principal}. 
+                -}
+                -else if (a.sponsor.subExists === false) {
+                  em #{a.sponsor.principal}. 
+                -}

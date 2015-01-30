@@ -66,7 +66,7 @@ module.exports = function authorBuilder(nameData,nameCheck) {
   }
   var prepName = [];
   var writeName,writeName1,writeName2;
-  if (nameCheck == 'author') {
+  if (nameCheck == 'author' || nameCheck == 'grantee') {
     for (var n = 0; n <= nameData.length-1; n++) {
 
       var writeNameArray = [];

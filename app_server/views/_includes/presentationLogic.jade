@@ -9,7 +9,6 @@ mixin presOutput
           each p in cv.presentations.conference
             if p.authors
               li
-                -var auth="author"
                 -var author = authorBuilder(p.authors,auth)
                 | #{author}
                 if p.date

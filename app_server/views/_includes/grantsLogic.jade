@@ -1,16 +1,19 @@
 mixin grantsOutput
+  -var granteeCheck="grantee"
 
   #my-grants-cred-child1.inner-child
     ul#grants-info.striped
       each g in cv.grants
         if g.name
           li
+            -var grantees = authorBuilder(g.grantees,granteeCheck)
+            | #{grantees}
             | #{g.name}. 
-            -if (g.sponsor.subordinate === true) {
+            -if (g.sponsor.subExists === true) {
               em #{g.sponsor.subordinate}, 
               | #{g.sponsor.principal}. 
             -}
-            -else if (g.sponsor.subordinate === false) {
+            -else if (g.sponsor.subExists === false) {
               em #{g.sponsor.principal}. 
             -}
             | #{g.startDate} - #{g.startDate}. [Funded $#{g.amount}].

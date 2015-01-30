@@ -5,6 +5,7 @@ include _includes/publicationLogic
 include _includes/presentationLogic
 include _includes/serviceLogic
 include _includes/grantsLogic
+include _includes/awardsLogic
 
 block content
   #banner.page-header
@@ -53,3 +54,8 @@ block content
         #my-grants-cred
           h2.word.grants Grants
           +grantsOutput
+
+      if cv.awards
+        #my-awards-cred
+          h2.word.awards Awards
+          +awardsOutput
