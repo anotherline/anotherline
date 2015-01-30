@@ -643,7 +643,35 @@ module.exports.cvTest1 = function(req, res){
             semester:"Fall"
           }
         }]
-      }
+      },
+      affiliations:[{
+        name:"Rhetoric Society of America",
+        startDate:"",
+        endDate:""
+      }],
+      proficiencies: [{
+        audio:[
+          "Ableton Live", "Adobe Audition", "Audacity", "MLRV"
+        ],
+        video: [
+          "Novacut", "Kdenlive", "iMovie", "Modul8"
+        ],
+        graphics: [
+          "Adobe InDesign", "Photoshop", "Fireworks", "Kira", "Inkscape" 
+        ],
+        office: [
+          "Microsoft", "LibreOffice" 
+        ],
+        courseManagement: [
+          "Blackboard", "Moodle", "Wordpress as a LMS" 
+        ],
+        other: [{
+          name:"Version Control",
+          platforms: [
+            "Github", "FTP"
+          ]
+        }]
+      }]
     }
   });
 };

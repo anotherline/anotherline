@@ -1,0 +1,9 @@
+mixin affilOutput
+
+  #my-affil-cred-child1.inner-child
+    ul#affil-info.striped
+      each a in cv.affiliations
+          li 
+            if a.name
+            | #{a.name}
+            if a.startDate

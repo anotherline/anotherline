@@ -6,6 +6,8 @@ include _includes/presentationLogic
 include _includes/serviceLogic
 include _includes/grantsLogic
 include _includes/awardsLogic
+include _includes/affiliationsLogic
+include _includes/proficienciesLogic
 
 block content
   #banner.page-header
@@ -57,5 +59,15 @@ block content
 
       if cv.awards
         #my-awards-cred
-          h2.word.awards Awards
+          h2.word.awards Awards / Fellowships
           +awardsOutput
+
+      if cv.affiliations
+        #my-affil-cred
+          h2.word.affiliations Affiliations
+          +affilOutput
+
+      if cv.proficiencies
+        #my-proficiencies-cred
+          h2.word.proficiencies Proficiencies
+          +proficienciesOutput

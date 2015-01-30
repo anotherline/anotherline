@@ -1,0 +1,73 @@
+mixin proficienciesOutput
+
+  #my-proficiencies-cred-child1.inner-child
+    ul#proficiencies-info.striped
+      each p in cv.proficiencies
+          li 
+            if p.audio
+              b Audio: 
+              -var aud = p.audio
+              -if (aud.length-1 == 1) {
+                  | #{aud[0]} and #{aud[1]}
+              -}
+              -else {
+                -for (var a = 0; a <= aud.length-1; a++) {
+                  -if (a == aud.length-1) {
+                    | and #{aud[a]}
+                  -}
+                  -else {
+                    | #{aud[a]}, 
+                  -}
+                -}
+              -}
+          li    
+            if p.video
+              b Video: 
+              -var vid = p.video
+              -if (vid.length-1 == 1) {
+                  | #{vid[0]} and #{vid[1]}
+              -}
+              -else {
+                -for (var v = 0; v <= vid.length-1; v++) {
+                  -if (v == vid.length-1) {
+                    | and #{vid[v]}
+                  -}
+                  -else {
+                    | #{vid[v]}, 
+                  -}
+                -}
+              -}
+          li    
+            if p.graphics
+              b Graphics/Image: 
+              -var gra = p.graphics
+              -if (gra.length-1 == 1) {
+                  | #{gra[0]} and #{gra[1]}
+              -}
+              -else {
+                -for (var g = 0; g <= gra.length-1; g++) {
+                  -if (g == gra.length-1) {
+                    | and #{gra[g]}
+                  -}
+                  -else {
+                    | #{gra[g]}, 
+                  -}
+                -}
+              -}
+          li    
+            if p.office
+              b Office: 
+              -var off = p.office
+              -if (off.length-1 == 1) {
+                  | #{off[0]} and #{off[1]}
+              -}
+              -else {
+                -for (var o = 0; o <= off.length-1; o++) {
+                  -if (o == off.length-1) {
+                    | and #{off[o]}
+                  -}
+                  -else {
+                    | #{off[o]}, 
+                  -}
+                -}
+              -}
