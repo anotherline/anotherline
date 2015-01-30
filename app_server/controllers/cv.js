@@ -145,6 +145,7 @@ module.exports.cvTest1 = function(req, res){
         },
         {
           name: 'North Dakota State University',
+          current: false,
           courses:
           [{
             position: 'Graduate Instructor',

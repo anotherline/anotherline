@@ -1,32 +1,40 @@
 mixin apptOutput
-  each u in cv.appointments.university
-    -if (u.current === true) {
-      h3.striped.parent-list #{u.name}
-      -if (u.courses !== 'undefined') {
-        h4 Teaching
-        ul.striped
-          each c in u.courses
-            li #{c.semesters}: #{c.position}; #{c.course}
+
+  if cv.appointments.university
+    each u in cv.appointments.university
+      -if (u.current === true) {
+        #my-appts-cred-child1
+          h3.striped.inner-span.parent-list #{u.name}
+          -if (u.courses !== 'undefined') {
+            #course-appts-child
+              h4 Teaching
+              ul.striped
+                each c in u.courses
+                  li #{c.semesters}: #{c.position}; #{c.course}
+          -}
+          -if (u.research !== 'undefined') {
+            #research-appts-child
+              h4 Research
+              ul.striped
+                each r in u.research
+                  li #{r.semesters}: #{r.position} in #{r.department}; #{r.project}
+          -}
       -}
-      -if (u.research !== 'undefined') {
-        h4 Research
-        ul.striped
-          each r in u.research
-            li #{r.semesters}: #{r.position} in #{r.department}; #{r.project}
+      -else if (u.current === false) {
+        #my-appts-cred-child2
+          h3.striped.inner-span.parent-list #{u.name}
+          -if (u.courses !== 'undefined') {
+            #course-appts-child
+              h4 Teaching
+              ul.striped
+                each cs in u.courses
+                  li #{cs.semesters}: #{cs.position}; #{cs.course}
+          -}
+          -if (u.research !== 'undefined') {
+            #research-appts-child
+              h4 Research
+              ul.striped
+                each rh in u.research
+                  li #{rh.semesters}: #{rh.position} in #{rh.department}; #{rh.project}
+          -}
       -}
-    -}
-    -else {
-      h3.striped.parent-list #{u.name}
-      -if (u.courses !== 'undefined') {
-        h4 Teaching
-        ul.striped
-          each c in u.courses
-            li #{c.semesters}: #{c.position}; #{c.course}
-      -}
-      -if (u.research !== 'undefined') {
-        h4 Research
-        ul.striped
-          each r in u.research
-            li #{r.semesters}: #{r.position} in #{r.department}; #{r.project}
-      -}
-    -}
