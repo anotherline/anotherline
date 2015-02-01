@@ -9,7 +9,7 @@ body {
   /* Deprecated syntax, but necessary for WebKit-based/old browsers */
   background: linear-gradient(left, #F0EDBB, #FFFCC4, #F0EDBB);
   /* New syntax for standards-compliant browsers (Opera 12.1, IE 10, Fx 16 onwards) without prefix */
-  background: linear-gradient(to right, #F0EDBB, #FFFCC4, #F0EDBB);
+  background: linear-gradient(to right, rgba(207, 201, 218, 0.2), rgba(202, 227, 218, 0.68), rgba(164, 160, 167, 0.3)) repeat scroll 0% 0% transparent);
 }
 
 h1,h2,h3,h4,p,ul {font-family: "Lora";}
@@ -60,9 +60,10 @@ cite{font-style: italic;}
 /*=================================
   TEXT
   ===============================*/
-h2,h4 {margin:0;padding:0 0 12px 0;font-style: normal;}
-h3 {margin:0;padding-bottom:12px;font-style: normal;}
-h3 {font-size: 20px; font-family: "Lora";}
+h1,h3 {margin:0;padding:0 0 12px 0;font-style: normal;}
+h3 {font-size: 16px;}
+h2 {margin:0;padding-bottom:12px;font-style: normal;}
+h2 {font-size: 20px; font-family: "Lora";}
 ul { list-style-type: none;margin: -10px 0 0 -42px; }
   .cvline li {
     max-width: 100%;
