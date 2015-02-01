@@ -1,4 +1,5 @@
 extends traditional-template-layout.jade
+include _includes/educationLogic
 
 block content
   #banner.page-header
@@ -23,36 +24,8 @@ block content
       h3.left-heading Education
     
     .col-xs-12.col-sm-9
-      #my-edu-cred-child1
-        h4.cvline.parent-list PhD Student in Rhetoric and Science and Technical Communication
-        ul#ed-phd-info.cvline
-          li 
-            a(href='/') University of Minnesota
-          li Advisor: 
-            a(href='/') Christina Haas
-
-        h4.cvline.parent-list MA in Composition Studies
-        ul#ed-phd-info.cvline
-          li 
-            a(href='/') North Dakota State University, 2012
-          li Thesis: "Where’s the Revolution? From 'Code Year' to the Continuum of Proceduracy"
-            ul.indent-margin-fix
-              li Advisor: 
-                a(href='/') Kevin Brooks
-              li Member: 
-                a(href='/') Andrew Mara
-              li Member: 
-                a(href='/') Kelly R. Sassi
-              li Outside Member: 
-                a(href='/') Brian Slator
-
-        h4.cvline.parent-list BA in English Studies
-        ul#ed-phd-info.cvline
-          li 
-            a(href='/') North Dakota State University, 2004
-          li Advisor:
-            a(href='/') Kevin Brooks
-        hr
+      +educationOutput
+      hr
 
   .row
     .col-xs-12.col-sm-3
