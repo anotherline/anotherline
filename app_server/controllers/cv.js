@@ -1047,7 +1047,7 @@ module.exports.cvDropDown = function(req, res){
 module.exports.cvTraditional = function(req, res){
   // res.render('cv-template-traditional', { title: 'My CV' });
   res.render('cv-template-traditional', { 
-    title: 'Dropdown Template Test',
+    title: 'Traditional Template Test',
     cv: {
       general: {
         given:'Chris',

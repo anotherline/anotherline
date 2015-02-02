@@ -1,0 +1,67 @@
+mixin apptOutput
+
+  if cv.appointments
+    .row
+      .col-xs-12.col-sm-3
+        h2.left-heading Appointments
+
+  if cv.appointments.university
+    each u in cv.appointments.university
+      -if (u.current === true) {
+        -if (u.courses !== 'undefined') {
+          .row.inner-rows
+            .col-xs-12.col-sm-3
+              h3.left-uni-heading #{u.name}
+
+          .row.inner-rows
+            .col-xs-12.col-sm-3
+              h4.left-subheading teaching
+
+            .col-xs-12.col-sm-9
+              ul.cvline.right-sub-list-item
+                each c in u.courses
+                  li #{c.semesters}: #{c.position}; #{c.course}
+        -}
+        -if (u.research !== 'undefined') {
+          .row.inner-rows
+            .col-xs-12.col-sm-3
+              h4.left-subheading research
+
+            .col-xs-12.col-sm-9
+              ul.cvline.right-sub-list-item
+                each r in u.research
+                  li #{r.semesters}: #{r.position} in #{r.department}; #{r.project}
+        -}
+        .row.inner-rows
+          .col-xs-12.col-sm-3
+
+          .col-xs-12.col-sm-9
+            hr
+      -}
+      -else if (u.current === false) {
+        -if (u.courses !== 'undefined') {
+          .row.inner-rows
+            .col-xs-12.col-sm-3
+              h3.left-uni-heading #{u.name}
+
+          .row.inner-rows
+            .col-xs-12.col-sm-3
+              h4.left-subheading teaching
+
+            .col-xs-12.col-sm-9
+              ul.cvline.right-sub-list-item
+                each cs in u.courses
+                  li #{cs.semesters}: #{cs.position}; #{cs.course}
+        -}
+        -if (u.research !== 'undefined') {
+          .row.inner-rows
+            .col-xs-12.col-sm-3
+              h4.left-subheading research
+
+            .col-xs-12.col-sm-9
+              ul.cvline.right-sub-list-item
+                each r in u.research
+                  li #{r.semesters}: #{r.position} in #{r.department}; #{r.project}
+        -}
+      -}
+  hr

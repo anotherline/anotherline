@@ -1,35 +1,52 @@
 mixin educationOutput
+
+  if cv.education
+    .row
+      .col-xs-12.col-sm-3
+        h2.left-heading Education
   
   if cv.education.phd
-    #my-edu-cred-child1
-      h3.cvline.inner-span.parent-list #{cv.education.phd.degree} #{cv.education.phd.title} in #{cv.education.phd.program}
-      #phd-edu-child
-        ul.indent
-            li 
-              a(href='/') #{cv.education.phd.institution}, 
-              | #{cv.education.phd.endDate} 
-              -if (cv.education.phd.committee.hasCommittee === true){
-                li Thesis: #{cv.education.phd.thesisTitle}
-                ul.indent-margin-fix
-                  li Advisor: 
-                    a(href='/') #{cv.education.phd.committee.advisor}
-                  li Member: 
-                    a(href='/') #{cv.education.phd.committee.member1}
-                  li Member: 
-                    a(href='/') #{cv.education.phd.committee.member2}
-                  li Outside Member: 
-                    a(href='/') #{cv.education.phd.committee.outside}
-              -}
-              -else {
-                li Advisor:&nbsp; 
+    .row.inner-rows
+      .col-xs-12.col-sm-3
+        h4.left-subheading Ph.D.
+
+      .col-xs-12.col-sm-9
+        ul.cvline.right-sub-list-item
+          li 
+            | #{cv.education.phd.degree} #{cv.education.phd.title} in 
+            a(href='/') 
+              | #{cv.education.phd.program}
+            | , #{cv.education.phd.institution}, 
+            | #{cv.education.phd.endDate} 
+            -if (cv.education.phd.committee.hasCommittee === true){
+              li Thesis: #{cv.education.phd.thesisTitle}
+              ul.indent-margin-fix
+                li Advisor: 
                   a(href='/') #{cv.education.phd.committee.advisor}
-              -}
+                li Member: 
+                  a(href='/') #{cv.education.phd.committee.member1}
+                li Member: 
+                  a(href='/') #{cv.education.phd.committee.member2}
+                li Outside Member: 
+                  a(href='/') #{cv.education.phd.committee.outside}
+            -}
+            -else {
+              li Advisor:&nbsp; 
+                a(href='/') #{cv.education.phd.committee.advisor}
+            -}
 
   if cv.education.masters
-    #my-edu-cred-child2
-      h3.cvline.inner-span #{cv.education.masters.degree} #{cv.education.masters.title} in #{cv.education.masters.program}
-      #masters-edu-child
-        ul.indent
+    .row.inner-rows
+      .col-xs-12.col-sm-3
+        h4.left-subheading Master's
+
+      .col-xs-12.col-sm-9
+        ul.cvline.right-sub-list-item
+          li 
+            | #{cv.education.masters.degree} in 
+            a(href='/') 
+              | #{cv.education.masters.program}
+
           -if (cv.education.masters.committee.hasCommittee === true){
             li 
               a(href='/') #{cv.education.masters.institution}
@@ -54,12 +71,17 @@ mixin educationOutput
           -}
 
   if cv.education.undergrad
-    #my-edu-cred-child3
-      h3.cvline.inner-span #{cv.education.undergrad.degree} #{cv.education.undergrad.title} in #{cv.education.undergrad.program}
-      #undergrad-edu-child
-        ul.indent
+    .row.inner-rows
+      .col-xs-12.col-sm-3
+        h4.left-subheading Bachelor's
+
+      .col-xs-12.col-sm-9
+        ul.cvline.right-sub-list-item
+          li #{cv.education.undergrad.degree} in #{cv.education.undergrad.program}
           li 
             a(href='/') #{cv.education.undergrad.institution}
             | , #{cv.education.undergrad.endDate}
           li Advisor: 
               a(href='/') #{cv.education.undergrad.advisor}
+
+  hr

@@ -1,54 +1,29 @@
 extends traditional-template-layout.jade
 include _includes/trad-educationLogic
+include _includes/trad-appointmentLogic
 
 block content
   #banner.page-header
     .row
       .col-lg-6
-        h2
+        h2 
 
   .row
     .col-xs-12.col-sm-3
-      h3
     
     .col-xs-12.col-sm-9
-      h2
-          a(href="") Chris Lindgren
-      p.address Nolte Center
-      p.address Minneapolis, MN 56082
-      p.email lindg250@umn.edu
-      hr
+      img(src="#{cv.general.picture}").profile
+      h2.name-header
+        a(href="") #{cv.general.given} #{cv.general.family}
+      p.address #{cv.general.location.address1}
+      p.address #{cv.general.location.city}, #{cv.general.location.state} #{cv.general.location.postalCode}
+      p.email #{cv.general.email}
+  
+  hr
 
-  .row
-    .col-xs-12.col-sm-3
-      h2.left-heading Education
-    
-    .col-xs-12.col-sm-9
-      +educationOutput
-      hr
+  +educationOutput
 
-  .row
-    .col-xs-12.col-sm-3
-      h3.left-heading Appointments
-    
-    .col-xs-12.col-sm-9
-      h4.cvline.parent-list University of Minnesota
-      ul.cvline.indent
-        li Fall 2014: Graduate Instructor, Rhetoric, Technology, and the Internet (WRIT 3577)
-        li Spring 2013-Summer 2013: Research Assistant, Computer Science & Engineering
-        li Fall 2012, Fall 2013: Graduate Instructor, 
-          a(href='http://www.clindgrencv.com/umn-1301.html') First-Year Writing (WRIT 1301)
-
-      h4.cvline.parent-list North Dakota State University
-      ul.cvline.indent
-        li Summer 2011-Spring 2012: Research Assistant, Sugar Labs @ NDSU
-        li Spring 2011: Research Assistant, National Writing Project
-        li Fall 2009-Spring 2012: Graduate Instructor, 
-          a(href='http://www.clindgrencv.com/ndsu-120.html') First-Year Writing
-        li Fall 2003-Spring 2004: Content Developer, 
-          a(href='http://fishhook.cs.ndsu.nodak.edu/home/') Like-A-Fishhook / Virtual Archaeologist Game Project
-
-      hr
+  +apptOutput
 
   .row
     .col-xs-12.col-sm-3
