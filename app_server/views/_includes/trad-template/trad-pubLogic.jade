@@ -1,0 +1,196 @@
+mixin pubOutput
+  -var auth="author",ed="editor",bt='books',ct='chapters',jt='journals',wtype='web',ct='coursework'
+
+  if cv.publications
+    .row
+      .col-xs-12.col-sm-3
+        h2.left-heading Publications
+
+      .col-xs-12.col-sm-9
+
+  if cv.publications.books
+    .row.inner-rows
+      .col-xs-12.col-sm-3
+        h4.left-subheading books
+
+      .col-xs-12.col-sm-9
+        ul.cvline.right-sub-list-item
+          each book in cv.publications.books
+            -if (book.forthcoming === false) {
+              li 
+                -if (book.role === false){
+                  -var editors = authorBuilder(book.editors,auth)
+                  | #{editors}
+                  -if (book.editors.number = 1) {
+                    | , (Ed). 
+                  -}
+                  -else if (book.editors.number > 1){
+                    | , (Eds). 
+                  -}
+                -}
+                -if (book.role === true){
+                  -var author = authorBuilder(book.authors,auth)
+                  | #{author}
+                -}
+                if book.date
+                  | (#{book.date}). 
+                  cite #{book.title}. 
+                  | #{book.pressLoc.city}, #{book.pressLoc.state}: #{book.press}.
+            -}
+        hr
+
+  if cv.publications.chapters
+    .row.inner-rows
+      .col-xs-12.col-sm-3
+        h4.left-subheading chapters
+
+      .col-xs-12.col-sm-9
+        ul.cvline.right-sub-list-item
+          each chapter in cv.publications.chapters
+            -if (chapter.forthcoming === false) {
+              li 
+                if chapter.authors
+                  -var author = authorBuilder(chapter.authors,auth)
+                  | #{author}
+
+                if chapter.date
+                  | (#{chapter.date}). #{chapter.title}. 
+
+                if chapter.editors
+                  | In 
+                  -var editor = authorBuilder(chapter.editors,ed)
+                  | #{editor}
+                  
+                if chapter.collection
+                  cite #{chapter.collection}, 
+                  em (pp. #{chapter.pgNums})
+                  | . #{chapter.pressLoc.city}, #{chapter.pressLoc.state}: #{chapter.press}.
+            -}
+        hr
+
+  if cv.publications.journals
+    .row.inner-rows
+      .col-xs-12.col-sm-3
+        h4.left-subheading articles
+
+      .col-xs-12.col-sm-9
+        ul.cvline.right-sub-list-item
+          each article in cv.publications.journals
+            li 
+              if article.authors
+                -var auth="author"
+                -var author = authorBuilder(article.authors,auth)
+                | #{author}
+              if article.date
+                | (#{article.date}). #{article.title}. 
+                cite #{article.journal}, #{article.volume}, 
+                | pp. #{article.pgNums}.
+        hr
+
+  if cv.publications.web
+    .row.inner-rows
+      .col-xs-12.col-sm-3
+        h4.left-subheading web-based
+
+      .col-xs-12.col-sm-9
+        ul.cvline.right-sub-list-item
+          each wt in cv.publications.web
+            li 
+              if wt.authors
+                -var auth="author"
+                -var author = authorBuilder(wt.authors,auth)
+                | #{author}
+              if wt.date
+                | (#{wt.date}). #{wt.title}. 
+                cite #{wt.journal}, #{wt.volume}. 
+                | Available at 
+                a(href=wt.assets.permaLink) #{wt.assets.permaLink}.
+        hr
+
+  -if (cv.publications.books.forthcoming !== false || cv.publications.chapters.forthcoming !== false || cv.publications.journals.forthcoming !== false || cv.publications.web.forthcoming !== false) {
+    .row.inner-rows
+      .col-xs-12.col-sm-3
+        h4.left-subheading forthcoming
+
+      .col-xs-12.col-sm-9
+        ul.cvline.right-sub-list-item
+          // Forthcoming books
+          -var bks = cv.publications.books
+          -for (var y=0; y<bks.length; y++) {
+              -if (bks[y].forthcoming !== false){
+                li
+                  -if (bks[y].role !== true){
+                    -var editors = authorBuilder(bks[y].editors,auth)
+                    | #{editors}
+                    -if (bks[y].editors.number = 1) {
+                      | , (Ed). 
+                    -}
+                    -else if (bks[y].editors.number > 1){
+                      | , (Eds). 
+                    -}
+                  -}
+                  -if (bks[y].role !== false){
+                    -var author = authorBuilder(bks[y].authors,auth)
+                    | #{author}
+                  -}
+                  if bks[y].date
+                    | (#{bks[y].date}). 
+                    cite #{bks[y].title}. 
+                    | #{bks[y].pressLoc.city}, #{bks[y].pressLoc.state}: #{bks[y].press}.
+              -}
+          -}
+          // Forthcoming chapters
+          -var chps = cv.publications.chapters
+          -for (var c=0; c<chps.length; c++) {
+              -if (chps[c].forthcoming !== false){
+                li 
+                  if chps[c].authors
+                    -var author = authorBuilder(chps[c].authors,auth)
+                    | #{author}
+                  if chps[c].date
+                    | (#{chps[c].date}). #{chps[c].title}
+                  if chps[c].editors
+                    | . In 
+                    -var editor = authorBuilder(chps[c].editors,ed)
+                    | #{editor}
+                  if chps[c].collection
+                    cite #{chps[c].collection}, 
+                    em (pp. #{chps[c].pgNums})
+                    | . #{chps[c].pressLoc.city}, #{chps[c].pressLoc.state}: #{chps[c].press}.
+              -}
+          -}
+          // Forthcoming articles
+          -var arts = cv.publications.journals
+          -for (var a=0; a<arts.length; a++) {
+              -if (arts[a].forthcoming !== false){
+                li 
+                  if arts[a].authors
+                    -var auth="author"
+                    -var author = authorBuilder(arts[a].authors,auth)
+                    | #{author}
+                  if arts[a].date
+                    | (#{arts[a].date}). #{arts[a].title}. 
+                    cite #{arts[a].journal}, #{arts[a].volume}, 
+                    | pp. #{arts[a].pgNums}.
+              -}
+          -}
+          // Forthcoming web articles
+          -var wa = cv.publications.web
+          -for (var w=0; w<wa.length; w++){
+            -if (wa[w].forthcoming !== false){
+              li
+                if wa[w].authors
+                  -var auth="author"
+                  -var author = authorBuilder(wa[w].authors,auth)
+                  | #{author}
+                if wa[w].date
+                  | (#{wa[w].date}). #{wa[w].title}. 
+                  cite #{wa[w].journal}, #{wa[w].volume}. 
+                  | Available at 
+                  a(href=wa[w].assets.permaLink) #{wa[w].assets.permaLink}.
+            -}
+          -}
+      hr
+  -}
+
+  hr

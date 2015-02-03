@@ -1,6 +1,7 @@
 extends traditional-template-layout.jade
-include _includes/trad-educationLogic
-include _includes/trad-appointmentLogic
+include _includes/trad-template/trad-educationLogic
+include _includes/trad-template/trad-appointmentLogic
+include _includes/trad-template/trad-pubLogic
 
 block content
   #banner.page-header
@@ -25,39 +26,7 @@ block content
 
   +apptOutput
 
-  .row
-    .col-xs-12.col-sm-3
-      h3.left-heading Publications
-    
-    .col-xs-12.col-sm-9
-
-  .row.inner-rows
-    .col-xs-12.col-sm-3
-      h4.left-subheading chapters
-    
-    .col-xs-12.col-sm-9
-      ul.cvline.right-sub-list-item
-        li Brooks, Kevin, Chris Lindgren, and Matthew Warner. (2014). Tackling a fundamental problem: Using digital labs to build a smarter computing culture. In Bill Hart-Davidson and Jim Ridolfo, (Eds.). <em>Rhetoric and the Digital Humanities</em>. Chicago, IL: University of Chicago Press.
-
-  .row.inner-rows
-    .col-xs-12.col-sm-3
-      h4.left-subheading publications in progress
-    
-    .col-xs-12.col-sm-9
-      ul.cvline.right-sub-list-item
-        li Brooks, Kevin and Chris Lindgren. Responding to the proceduracy crisis: From 'Code Year' to Code Decade. In Lynn C. Lewis, (Ed.). <em>The Kids Still Can't Write: Literacy Crisis Discourses in the 21st Century</em>. [Manuscript accepted; Computers and Composition Digital Press, Winter 2015].
-        li Hawk, Byron, Chris Lindgren, and Andrew Mara. Utopian Laptop Initiatives: From technological deism to object-oriented rhetoric. In Sidney Dobrin, (Ed.). <em>Writing Posthumanism, Posthuman Writing</em>. [Manuscript accepted; Parlor Press, Winter 2015].
-
-  .row.inner-rows
-    .col-xs-12.col-sm-3
-      h4.left-subheading book reviews
-    
-    .col-xs-12.col-sm-9
-      ul.cvline.right-sub-list-item
-        li Lindgren, Chris. (2013). BASIC coding cultures. [Review of the book <em>10 PRINT CHR$(205.5+RND(1)); : GOTO 10</em>, by N. Montfort, P. Baudoin, J. Bell, I. Bogost, J. Douglass, M. C. Marino, M. Mateas, C. Raes, M. Sample, & N. Vawter]. <em>Enculturation, 16</em>. Go to 
-          a(href='http://enculturation.gmu.edu/10-print') http://enculturation.gmu.edu/10-print.
-
-      hr
+  +pubOutput
 
   .row
     .col-xs-12.col-sm-3

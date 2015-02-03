@@ -64,7 +64,8 @@ The main goal of this first phase is to develop the schema and a few CV template
 - <code>app_server/_includes/publicationLogic.jade</code>: the forthcoming conditional needs to be completed for all pub types.
 - <code>app_server/_includes/publicationLogic.jade</code>: needs conditional statements to account for other data parameters, such as available hyperlinks to works, or dropdown/pop-up feature if abstract for a work is available, etc.
 - <code>app_server/_includes/publicationLogic.jade</code>: make sure all hyperlinks are Web accessible
-- create more jade templates for the CVs; currently, there are two: <code>cv-template-dropdown.jade</code> and <code>cv-template-traditional.jade</code>.
+- create more jade templates for the CVs; currently, there are two: <code>cv-template-dropdown.jade</code> and <code>cv-template-traditional.jade</code>
+- write/design print.css stylesheets for both the dropdown and traditional templates
 
 ### Phase 2 - Build MongoDB database and API
 
