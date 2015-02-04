@@ -1,0 +1,91 @@
+mixin presOutput
+  -var auth="author",ld="leader"
+
+  if cv.presentations
+    .row
+      .col-xs-12.col-sm-3
+        h2.left-heading Presentations
+
+      .col-xs-12.col-sm-9
+
+  if cv.presentations.conference
+    .row.inner-rows
+      .col-xs-12.col-sm-3
+        h4.left-subheading conferences
+
+      .col-xs-12.col-sm-9
+        ul.cvline.right-sub-list-item
+          each p in cv.presentations.conference
+            if p.authors
+              li
+                -var author = authorBuilder(p.authors,auth)
+                | #{author}
+                if p.date
+                  | (#{p.date}). 
+                  -if (p.assets.exists === true) {
+                    a(href=p.assets.presLink) #{p.title}. 
+                  -}
+                  -else if (p.assets.exists === false) {
+                    | #{p.title}. 
+                  -}
+                  cite #{p.conference}. 
+                  | #{p.location.city}, #{p.location.state}. 
+                -if (p.invited === true) {
+                  em //invited
+                -}
+
+  if cv.presentations.workshop
+    .row.inner-rows
+      .col-xs-12.col-sm-3
+        h4.left-subheading workshops
+
+      .col-xs-12.col-sm-9
+        ul.cvline.right-sub-list-item
+          each w in cv.presentations.workshop
+            if w.date
+              li
+                | (#{w.date}). 
+                if w.role
+                  em #{w.role} 
+                if w.leaders
+                  -var leader = authorBuilder(w.leaders,ld)
+                  | in #{leader}
+                -if (w.assets.exists === true) {
+                  a(href=w.assets.presLink) #{w.title}. 
+                -}
+                -else if (w.assets.exists === false) {
+                  | #{w.title}. 
+                -}
+                cite #{w.workshop}. 
+                | #{w.location.city}, #{w.location.state}. 
+                -if (w.invited === true) {
+                  em //invited
+                -}
+
+  if cv.presentations.department
+    .row.inner-rows
+      .col-xs-12.col-sm-3
+        h4.left-subheading department
+
+      .col-xs-12.col-sm-9
+        ul.cvline.right-sub-list-item
+          each d in cv.presentations.department
+            if d.authors
+              li
+                -var auth="author"
+                -var author = authorBuilder(d.authors,auth)
+                | #{author}
+                if d.date
+                  | (#{d.date}). 
+                  -if (d.assets.exists === true) {
+                    a(href=d.assets.presLink) #{d.title}. 
+                  -}
+                  -else if (d.assets.exists === false) {
+                    | #{d.title}. 
+                  -}
+                  cite #{d.event}. 
+                  | #{d.location.city}, #{d.location.state}. 
+                -if (d.invited === true) {
+                  em //invited
+                -}
+    hr
