@@ -84,4 +84,6 @@ mixin educationOutput
           li Advisor: 
               a(href='/') #{cv.education.undergrad.advisor}
 
-  hr
+  -if (typeof cv.service !== "undefined") {
+    hr
+  -}

@@ -572,6 +572,7 @@ module.exports.cvTest1 = function(req, res){
           journal: "Written Communication"
         }],
         groups: [{
+          role: "",
           date:"",
           title:"",
           organization:""

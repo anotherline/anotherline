@@ -1,0 +1,43 @@
+mixin serviceOutput
+
+  if cv.service
+    .row
+      .col-xs-12.col-sm-3
+        h2.left-heading Service
+
+      .col-xs-12.col-sm-9
+
+  if cv.service.editorial
+    .row.inner-rows
+      .col-xs-12.col-sm-3
+        h4.left-subheading journal / editorial
+
+      .col-xs-12.col-sm-9
+        ul.cvline.right-sub-list-item
+          each e in cv.service.editorial
+            if e.role
+              li
+                | #{e.role}, 
+                cite #{e.journal}.
+
+  if cv.service.committees
+    .row.inner-rows
+      .col-xs-12.col-sm-3
+        h4.left-subheading committees
+
+      .col-xs-12.col-sm-9
+        ul.cvline.right-sub-list-item
+          each c in cv.service.committees
+            if c.role
+              li
+                | #{c.role}. (
+                | #{c.semesters}
+                | ). #{c.organization}. 
+                cite #{c.university}. 
+                -if (c.invited === true) {
+                  em //invited
+                -}
+
+  -if (typeof cv.service !== "undefined") {
+    hr
+  -}

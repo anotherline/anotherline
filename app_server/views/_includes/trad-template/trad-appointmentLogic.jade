@@ -64,4 +64,7 @@ mixin apptOutput
                   li #{r.semesters}: #{r.position} in #{r.department}; #{r.project}
         -}
       -}
-  hr
+  
+  -if (typeof cv.service !== "undefined") {
+    hr
+  -}
