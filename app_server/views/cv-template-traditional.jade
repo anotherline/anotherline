@@ -5,6 +5,7 @@ include _includes/trad-template/trad-pubLogic
 include _includes/trad-template/trad-presLogic
 include _includes/trad-template/trad-serviceLogic
 include _includes/trad-template/trad-grantsLogic
+include _includes/trad-template/trad-awardsLogic
 
 block content
   #banner.page-header
@@ -37,18 +38,7 @@ block content
 
   +grantOutput
 
-  .row
-    .col-xs-12.col-sm-3
-      h3.left-heading Awards / Fellowships
-    
-    .col-xs-12.col-sm-9
-      ul.cvline.right-sub-list-item
-        li 
-          a(href="http://clindgrencv.com/rsa14.html") 2014 RSA Social Media Fellowship
-        li Summer 2014 James I. Brown Research Fellowship. University of Minnesota: Writing Studies.
-        li Spring 2014 Medtronic/Industrial Affiliates Program Fellowship. University of Minnesota: Writing Studies and Medtronic.
-        li Spring 2013 James I. Brown Fellowship. University of Minnesota: Writing Studies.
-      hr
+  +awardsOutput
 
   .row
     .col-xs-12.col-sm-3

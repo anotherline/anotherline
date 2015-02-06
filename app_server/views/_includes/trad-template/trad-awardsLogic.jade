@@ -1,0 +1,58 @@
+mixin awardsOutput
+
+  if cv.awards
+    .row
+      .col-xs-12.col-sm-3
+        h2.left-heading Awards / Fellowships
+
+      .col-xs-12.col-sm-9
+
+  if cv.awards.fellowship
+    .row.inner-rows
+      .col-xs-12.col-sm-3
+        h4.left-subheading fellowships
+
+      .col-xs-12.col-sm-9
+        ul.cvline.right-sub-list-item
+          each f in cv.awards.fellowship
+            if f.name
+              li
+                -if (f.date.semExists === true) {
+                  | #{f.date.semester} #{f.date.year} 
+                -}
+                -else if (f.date.semExists === false) {
+                  | #{f.date.year} 
+                -} 
+                -if (f.sponsor.subExists === true) {
+                  em #{f.sponsor.subordinate}, 
+                  | #{f.sponsor.principal} 
+                -}
+                -else if (f.sponsor.subExists === false) {
+                  em #{f.sponsor.principal} 
+                -}
+                | #{f.name}.
+
+  if cv.awards.award
+    .row.inner-rows
+      .col-xs-12.col-sm-3
+        h4.left-subheading awards
+
+      .col-xs-12.col-sm-9
+        ul.cvline.right-sub-list-item
+          each a in cv.awards.award
+            if a.name
+              li
+                -if (a.date.semExists === true) {
+                  | #{a.date.semester} #{a.date.year} 
+                -}
+                -else if (a.date.semExists === false) {
+                  | #{a.date.year} 
+                -}
+                | #{a.name}. 
+                -if (a.sponsor.subExists === true) {
+                  em #{a.sponsor.subordinate}, 
+                  | #{a.sponsor.principal}. 
+                -}
+                -else if (a.sponsor.subExists === false) {
+                  em #{a.sponsor.principal}. 
+                -}
