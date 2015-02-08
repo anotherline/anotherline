@@ -1,0 +1,18 @@
+mixin affilOutput
+
+  if cv.affiliations
+    .row
+      .col-xs-12.col-sm-3
+        h2.left-heading Affiliations
+
+      .col-xs-12.col-sm-9
+        ul.cvline.right-sub-list-item
+          each a in cv.affiliations
+            li 
+              if a.name
+              | #{a.name}
+              if a.startDate
+
+  -if (typeof cv.affiliations !== "undefined") {
+    hr
+  -}

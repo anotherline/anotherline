@@ -56,3 +56,7 @@ mixin awardsOutput
                 -else if (a.sponsor.subExists === false) {
                   em #{a.sponsor.principal}. 
                 -}
+
+  -if (typeof cv.presentations !== "undefined") {
+    hr
+  -}
