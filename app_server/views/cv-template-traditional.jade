@@ -7,6 +7,7 @@ include _includes/trad-template/trad-serviceLogic
 include _includes/trad-template/trad-grantsLogic
 include _includes/trad-template/trad-awardsLogic
 include _includes/trad-template/trad-affiliationLogic
+include _includes/trad-template/trad-langLogic
 
 block content
   #banner.page-header
@@ -43,33 +44,7 @@ block content
 
   +affilOutput
 
-  .row
-    .col-xs-12.col-sm-3
-      h3.left-heading Languages
-    
-    .col-xs-12.col-sm-9
-
-  .row.inner-rows
-    .col-xs-12.col-sm-3
-      h4.left-subheading human
-    
-    .col-xs-12.col-sm-9
-      ul.cvline.right-sub-list-item
-        li Mandarin (2 years of coursework)
-
-  .row.inner-rows
-    .col-xs-12.col-sm-3
-      h4.left-subheading human / machine
-    
-    .col-xs-12.col-sm-9
-      ul.cvline.right-sub-list-item
-        li HTML5/CSS3 (Advanced)
-        li Javascript/jQuery (Intermediate)
-        li Node.js (Novice)
-        li Python (Intermediate)
-        li PHP (Novice)
-        li Java (Novice)
-      hr
+  +languagesOutput
 
   .row
     .col-xs-12.col-sm-3
